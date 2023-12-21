@@ -1,0 +1,258 @@
+---
+import Layout from '../layouts/layout.astro';
+
+import { Image } from 'astro:assets';
+import AuctionsHero from '../images/auctions/hero.png';
+import AuctionsMechanics from '../images/auctions/mechanics.svg';
+
+import FAQ from '../components/FAQ';
+import YoutubeEmbed from '../components/YoutubeEmbed';
+import AuctionSchedule from '../components/AuctionSchedule';
+import Button from '../components/Button';
+
+import AuctionsData from '../data/pages/auctions';
+---
+
+<Layout title="Auctions">
+  <section class="">
+    <div class="lg:sticky lg:top-24">
+      <Image
+        class="scale-90 opacity-50"
+        src={AuctionsHero}
+        alt=""
+      />
+      <h1 class="font-bold absolute top-36 w-1/2">
+        Parachain Slot Auctions
+      </h1>
+    </div>
+    <p class="relative md:w-3/4 md:left-24 lg:w-1/2 lg:left-1/2">
+      The key to Kusama’s scalable multichain architecture, parachains
+      connect to the network by leasing a slot on the Relay Chain via
+      permissionless auction. As Polkadot’s canary network, Kusama is
+      rolling out parachain auctions first for testing and optimization.
+
+
+      <br />
+      <span>Expect Chaos.</span>
+    </p>
+  </section>
+  <section>
+    <div class="lg:w-1/2 mb-8">
+      <h2 class="mb-8">How Do Teams Participate?</h2>
+      <p>
+        The path to launching a parachain on Kusama will differ from
+        team to team, but a typical process could look something like
+        this:
+      </p>
+    </div>
+    <ul class="flex flex-wrap justify-between mb-16">
+      {
+        AuctionsData.participate.map((step: any, i: any) => (
+          <li class="w-full md:w-[49%] lg:w-[32%] border-[1px] border-pink mb-4 px-4 py-4 md:py-8">
+            <div>
+              <Image
+                class="w-12 md:pb-4 opacity-70"
+                src={step.img}
+                alt=""
+              />
+              <p class="mb-0 text-sm">{step.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="mx-auto text-center">
+      <p class="md:w-1/3 mx-auto mb-4">
+        Auctions and Crowdloans Guide for Parachain Teams
+      </p>
+      <Button>Watch the video</Button>
+    </div>
+  </section>
+  <section>
+    <div class="lg:w-2/3 xl:w-1/2 mb-4">
+      <h2 class="mb-4">Auction Mechanics</h2>
+      <p>
+        Parachain slot auctions follow a modified candle auction format,
+        with each auction lasting approximately 1 week. To prevent
+        auction sniping (the strategy of bidding at the last moment) and
+        promote more accurate price discovery, the exact endpoint of a
+        particular auction remains unknown until after the auction’s
+        close.
+      </p>
+    </div>
+    <ul class="flex flex-wrap gap-4">
+      {
+        AuctionsData.mechanics.map((step: any, i: any) => (
+          <li class="md:w-[29%]">
+            <div>
+              <div class="relative w-44 md:w-48 mb-4">
+                <Image
+                  class=""
+                  src={step.img}
+                  alt=""
+                />
+                <span class="text-3xl md:text-6xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  {i + 1}
+                </span>
+              </div>
+              <p class="text-sm">{step.description} </p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+    <YoutubeEmbed
+      client:idle
+      thumbnail="/thumbnails/auctions.webp"
+      id="6kZx9hKFjjU"
+      title="Auctions on Polkadot and Kusama"
+      containerClassNames=""
+    />
+    <div class="text-center">
+      <Button>Learn more about auctions</Button>
+    </div>
+    <div class="my-24 mx-auto md:w-2/3 text-center">
+      <h2 class="mb-4">Auction Timetable</h2>
+      <p>
+        Each auction has an open bidding period of approximately 1 week
+        and assigns a total slot duration of 48 weeks (divided into 8
+        lease periods of 6 weeks each). The auction timetable is
+        determined by the Kusama Council.
+      </p>
+    </div>
+    <AuctionSchedule client:load />
+    <div class="my-24 mx-auto sm:w-2/3 text-center">
+      <h2 class="mb-4">Auction Ending Period</h2>
+      <p>
+        Each auction has an ending period that begins approximately 1
+        day and 21 hours after the start of the auction and lasts until
+        the end of the 1-week bidding period. The auction’s end point
+        can be any time within the ending period, and is automatically
+        and randomly chosen by the VRF at the close of the 1-week
+        bidding period.
+      </p>
+    </div>
+    <Image
+      class="w-full"
+      src={AuctionsMechanics}
+      alt=""
+    />
+  </section>
+  <section>
+    <div class="lg:w-2/3 xl:w-1/2 my-24">
+      <h2 class="mb-4">Crowdloans</h2>
+      <p class="mb-4">
+        Some teams may choose to crowdfund their slot lease using
+        Kusama’s built-in crowdloan mechanism, which allows people to
+        contribute by agreeing to lock up their own KSM until the end of
+        the lease. Teams can reward their contributors however they see
+        fit, and can structure their crowdloan in various ways, hosting
+        it either natively on Kusama or on a 3rd-party platform.
+      </p>
+      <p class="mb-4">
+        The typical process for a crowdloan conducted natively on Kusama
+        will look something like this:
+      </p>
+    </div>
+    <ul class="flex flex-wrap gap-4">
+      {
+        AuctionsData.crowdloans.map((step: any, i: any) => (
+          <li class="md:w-[29%]">
+            <div>
+              <div class="relative w-44 md:w-48 mb-4">
+                <Image
+                  class=""
+                  src={step.img}
+                  alt=""
+                />
+                <span class="text-3xl md:text-6xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  {i + 1 + 5}
+                </span>
+              </div>
+              <p class="text-sm">{step.description} </p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+    <YoutubeEmbed
+      client:idle
+      id="ElEjsJj4oCg"
+      title="Crowdloans on Polkadot and Kusama"
+      thumbnail="/thumbnails/crowdloans1.webp"
+    />
+    <div class="text-center mb-24">
+      <Button>Learn more about crowdloans</Button>
+    </div>
+    <div>
+      <div class="md:w-2/3 text-center mx-auto mb-24">
+        <h2 class="mb-4">Participating in a crowdloan</h2>
+        <p>
+          Be part of blockchain history by helping kick start your
+          favorite Kusama parachains. Crowdloans raise the bar for
+          blockchain teams, pushing them to demonstrate their technology
+          first and get support from KSM holders in order to launch.
+          Here’s how it works:
+        </p>
+      </div>
+      <div>
+        {
+          AuctionsData.crowdloans2.map((step) => (
+            <div class="flex flex-wrap items-start mb-8">
+              <div class="sm:w-1/3">
+                <h4 class="mt-1 text-xl sm:max-w-[30%]">
+                  {step.title}
+                </h4>
+              </div>
+              <p class="my-0 sm:w-2/3">{step.description}</p>
+              {step.videoSrc && (
+                <YoutubeEmbed
+                  client:idle
+                  containerClassNames="aspect-video my-24 h-full w-full md:w-2/3 relative md:left-1/3 my-4"
+                  title={step.title}
+                  id={step.videoSrc}
+                  thumbnail={step.thumbnail}
+                />
+              )}
+            </div>
+          ))
+        }
+      </div>
+      <div class="my-8 mx-auto sm:w-1/3 text-center">
+        <h4 class="mb-4">Have a question about crowdloans?</h4>
+        <Button>Join the Discord chat</Button>
+      </div>
+      <div class="w-[90%] sm:w-3/4 mx-auto my-24">
+        <h2 class="sm:w-[90%] text-center mx-auto mb-4">
+          How to Protect Yourself From Crowdloan Scams
+        </h2>
+        <p class="mb-4">
+          Scams are unfortunately a real threat in the blockchain space
+          that requires one to be vigilant. Fake crowdloan campaigns may
+          present an attractive target for scammers. Always stay alert
+          to protect yourself and your non-refundable crypto assets. If
+          you suspect you’re being scammed, please email the Web3
+          Foundation Support Team.
+        </p>
+        <h5 class="mb-4">Essential Rules of Thumb:</h5>
+        <ul class="list-[square] marker:text-pink">
+          {
+            AuctionsData.safetyTips.map((tip) => (
+              <li>
+                <p class="mb-4 text-sm">{tip.description}</p>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="w-[90%] text-center mx-auto mt-8">
+          <Button>
+            Learn more
+            <br />
+             about avoiding scams
+          </Button>
+        </div>
+      </div>
+    </div>
+    <FAQ client:load />
+  </section>
+</Layout>
