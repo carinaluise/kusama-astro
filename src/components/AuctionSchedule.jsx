@@ -1,0 +1,103 @@
+import { useState } from 'react';
+
+import auctionData from '../data/components/auctions';
+
+const AuctionSchedule = () => {
+  const [selectedAuction, setSelectedAuction] = useState({
+    start: '#7924237',
+    end: '#8023773',
+  });
+
+  const handleAuctionChange = (event) => {
+    const selectedIndex = Number(event.target.value);
+    setSelectedAuction(auctionData[selectedIndex]);
+  };
+
+  return (
+    <div className="">
+      <h3 className="text-center mb-12 xl:mb-24">
+        Full Auction Schedule
+      </h3>
+      <div className="mx-auto text-center">
+        <select
+          className="w-full sm:w-1/2 bg-pink px-32 py-2"
+          onChange={handleAuctionChange}
+        >
+          {auctionData.map((auction, index) => (
+            <option
+              className="text-center"
+              key={index}
+              value={index}
+            >
+              Auction {index + 1}
+            </option>
+          ))}
+        </select>
+      </div>
+      {selectedAuction && (
+        <div className="sm:w-3/4 mx-auto my-12 sm:my-24">
+          <div className="border-b-[1px] border-gray/20 pb-4 mb-4">
+            <h5>Auction Starts</h5>
+            {selectedAuction.hasOwnProperty('winners') ? (
+              <a
+                href={`https://kusama.subscan.io/block/${selectedAuction.start}`}
+              >
+                Block {selectedAuction.start}
+              </a>
+            ) : (
+              <p>Block {selectedAuction.start}</p>
+            )}
+          </div>
+          {selectedAuction.hasOwnProperty('endStart') && (
+            <div className="border-b-[1px] border-gray/20 pb-4 mb-4">
+              <h5>Ending Period Starts</h5>
+              <a
+                href={`https://kusama.subscan.io/block/${selectedAuction.endStart}`}
+              >
+                Block {selectedAuction.endStart}
+              </a>
+            </div>
+          )}
+          <div className="border-b-[1px] border-gray/20 pb-4 mb-4">
+            <h5>Bidding Ends</h5>
+            {selectedAuction.hasOwnProperty('winners') ? (
+              <a
+                href={`https://kusama.subscan.io/block/${selectedAuction.end}`}
+              >
+                Block {selectedAuction.end}
+              </a>
+            ) : (
+              <p>Block {selectedAuction.start}</p>
+            )}
+          </div>
+          {selectedAuction.hasOwnProperty('winners') && (
+            <div className="border-b-[1px] border-gray/20 pb-4 mb-4">
+              <h5>Winning parachain(s) onboarded:</h5>
+              <p>
+                {selectedAuction.winners.map((winner, index) => (
+                  <>
+                    <a
+                      href={winner.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Lease Period {winner.leaseNo}
+                    </a>
+                    {index === 0 && ' - '}
+                  </>
+                ))}
+              </p>
+            </div>
+          )}
+          <p className="opacity-70 text-sm">
+            The block numbers listed above can change based on network
+            block production and the potential for skipped blocks. Click
+            on the block number for an estimate of the date and time.
+          </p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default AuctionSchedule;
