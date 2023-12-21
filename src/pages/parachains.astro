@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/layout.astro';
+import CustomSwiper from '../components/Swiper';
+import Button from '../components/Button';
+
+import { Image } from 'astro:assets';
+import Stripes1 from '../images/parachains/stripes1.svg';
+import Stripes2 from '../images/parachains/stripes2.svg';
+import ParachainHero from '../images/parachains/hero.png';
+
+import parachainsData from '../data/pages/parachains';
+---
+
+<Layout title="parachains">
+  <section class="">
+    <div class="lg:sticky lg:top-44">
+      <h1 class="w-1/2">Blockchains that break down walls.</h1>
+      <Image
+        class="relative md:left-24 opacity-50 scale-75 lg:scale-100"
+        alt=""
+        src={ParachainHero}
+      />
+    </div>
+    <p
+      class="lg:pt-56 md:w-3/4 md:left-24 lg:w-1/2 text-sm leading-6 relative lg:left-1/2"
+    >
+      Parachains are Kusama’s advanced, next-generation blockchains that
+      bring several breakthroughs compared to legacy networks. Together
+      they form the Kusama ecosystem, an interconnected network of
+      specialized chains breaking down the walls of the centralized web.
+      Open possibilities for Web3 builders.
+    </p>
+  </section>
+  <section class="mx-auto text-center lg:w-3/4">
+    <h2 class="mb-8">Open possibilities for Web3 builders.</h2>
+    <p class="text-sm leading-6">
+      While other blockchain networks only allow developers to build
+      dapps using smart contracts, Kusama gives them full control over
+      the underlying blockchain itself. This flexibility gives parachain
+      developers the maximum freedom to optimize for specific use cases
+      — which means better and more secure dapps and services for all.
+    </p>
+  </section>
+  <CustomSwiper client:load />
+  <section class="mx-auto w-[90%] md:w-full">
+    <h2>Welcome to the paraverse.</h2>
+    <p class="text-sm w-[45ch] md:w-2/3">
+      From DeFi to identity and supply chain, gaming and NFTs, IoT,
+      DAOs, and more, parachains can be built for any use case. They can
+      also take on various forms depending on their intended function,
+      including:
+    </p>
+    <ul class="my-8 flex flex-wrap">
+      {
+        parachainsData.paraverse.map((item) => (
+          <li class="md:w-[45%] gap-8 xl:w-1/3 my-4">
+            <Image
+              class="mb-4"
+              alt=""
+              src={item.img}
+            />
+            <h4 class="mb-2 w-3/4">{item.title}</h4>
+            <p class="text-sm max-w-[80%]">{item.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+  <section class="flex flex-wrap">
+    <div class="relative lg:left-1/2 inline w-full lg:w-1/2 mb-16">
+      <Image
+        class="mx-auto"
+        src={Stripes1}
+        alt=""
+      />
+    </div>
+    <div class="relative lg:right-1/2 inline mx-auto w-full lg:w-1/2">
+      <h2 class="w-3/4 mb-4">Parachains as autonomous agents</h2>
+      <p class="text-sm">
+        Parachains can act autonomously based on the will of their
+        communities to participate in Kusama governance and allocate
+        on-chain treasuries. This opens the door to new decentralized
+        funding models, from project funding to decentralized sovereign
+        wealth funds and even cross-chain mergers and acquisitions.
+      </p>
+    </div>
+  </section>
+  <section class="flex flex-wrap">
+    <div class="inline w-full lg:w-1/2 mb-16">
+      <Image
+        class="mx-auto"
+        src={Stripes2}
+        alt=""
+      />
+    </div>
+    <div class="inline mx-auto w-[90%] md:w-full lg:w-1/2">
+      <h2 class="w-3/4 mb-4">Parachains as digital nation states</h2>
+      <p class="text-sm">
+        With their own communities, rules, economies, governance,
+        treasuries, and relationships with external chains, parachains
+        are akin to decentralized digital nations. Kusama allows them to
+        come together, communicate and share security guarantees for the
+        betterment of the entire ecosystem.
+      </p>
+    </div>
+  </section>
+  <section class="text-center mx-auto lg:w-2/3">
+    <h2 class="mb-4">
+      Parachain Slot Auctions <br /> & Crowdloans
+    </h2>
+    <p class="text-sm">
+      Parachains connect to Kusama by leasing a parachain slot via
+      auction. Parachain slots can be leased for up to 1 year at a time
+      with the option to renew, and grant the parachain continuous
+      connection to the network for the duration of the lease.
+    </p>
+  </section>
+  <section>
+    <h2 class="text-center">How auctions work</h2>
+    <div class="justify-center mt-8 flex flex-wrap gap-4">
+      {
+        parachainsData.auctionInfo.map((info) => (
+          <div class="md:basis-[45%] p-8 border-[1px] border-pink ">
+            <h3 class="mb-4">{info.title}</h3>
+            <p class="text-sm">{info.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+  <section class="mb-24 text-center md:w-1/3 mx-auto">
+    Learn more about how auctions and crowdloans work in this in-depth
+    video explainer.
+  </section>
+  <section class="mb-24 text-center md:w-1/2 mx-auto">
+    <h2 class="mb-8">Dive deeper into auctions and crowdloans</h2>
+    <Button>Learn more</Button>
+  </section>
+  <section>
+    <div class="mb-24 text-center md:w-2/3 mx-auto">
+      <h2 class="mb-8">
+        This bird breaks down walls. <br /> Parachain launch NFTs
+      </h2>
+      <p class="text-sm">
+        Three limited edition NFTs were created to celebrate the launch
+        of Kusama parachains. Representing three interpretations of the
+        Kusama canary by Berlin street artists Awer, Vidam and Andreas
+        Preis, the paintings were created on a section of the Berlin
+        wall now used as an open canvas for free artistic expression.
+        The collection was limited to 9,999 NFTs, which have already
+        been claimed.
+      </p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-4 mb-24">
+      {
+        parachainsData.nfts.map((nft) => (
+          <div class="lg:w-[29%] bg-[#2D2D2D]">
+            <Image
+              alt=""
+              src={nft.img}
+            />
+            <div class="pb-6 ml-4 mt-6 ">
+              <p class="mb-0">{nft.aside}</p>
+              <h3 class="mt-0">{nft.title}</h3>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
