@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'SpaceMono-Regular';
+  src: url('/fonts/SpaceMono-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SpaceGrotesk-Regular';
+  src: url('/fonts/SpaceGrotesk-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SpaceGrotesk-Bold';
+  src: url('/fonts/SpaceGrotesk-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}

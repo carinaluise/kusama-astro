@@ -1,0 +1,149 @@
+@import url('./fonts.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply font-mono text-white bg-black bg-cover max-w-full;
+}
+
+::selection {
+  @apply bg-turqoise text-pink;
+}
+
+p {
+  @apply my-4 text-base text-white/90 opacity-90 tracking-tight leading-loose;
+}
+
+h1 {
+  @apply text-xl md:text-2xl lg:text-4xl leading-tight;
+}
+
+h2 {
+  @apply mb-4 font-bold font-space text-[28px] lg:text-2xl leading-tight;
+}
+
+h3 {
+  @apply mb-4 font-bold font-space lg:text-xl leading-relaxed;
+}
+
+h4 {
+  @apply mb-4 font-space md:text-xl;
+}
+
+h5 {
+  @apply mb-4 text-lg;
+}
+
+section,
+aside {
+  @apply my-16;
+}
+
+section {
+  @apply max-w-full;
+}
+
+/* Pagination Styling */
+
+.swiper-pagination {
+  @apply absolute top-24 md:top-16 left-[98%] md:left-1/2 text-white;
+}
+
+.swiper-pagination-bullet {
+  @apply opacity-100 mb-2 block w-[6px] h-[6px] bg-gray/50 relative z-50;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-pink;
+}
+
+/* Hubspot Form Styles  */
+
+.legal-consent-container p {
+  @apply text-xs text-white;
+}
+
+.hs-form-field {
+  @apply my-4;
+}
+
+.hs-form-field input,
+.hs-form-field select {
+  @apply border-[1px] mt-4 rounded-sm border-gray/10 w-full p-2;
+}
+
+.hs-main-font-element h1 {
+  @apply text-2xl mb-12;
+}
+
+.is-placeholder {
+  @apply text-black;
+}
+
+.hs-error-msg {
+  @apply !text-pink text-xs;
+}
+
+.hs-form-booleancheckbox-display input {
+  @apply p-0 inline w-4 mb-0;
+}
+
+.hs-form-booleancheckbox-display {
+  @apply flex items-baseline;
+}
+
+.hs-button {
+  @apply bg-pink text-white p-2 hover:cursor-pointer;
+}
+
+/* Loading Animation */
+
+#loading {
+  @apply flex justify-center items-center fixed top-0 left-0 w-full h-full bg-black z-50;
+}
+
+.loading__dot {
+  @apply w-[5px] h-[5px] bg-white mx-2 opacity-0;
+  animation: dot-animation 1.5s infinite;
+}
+
+.loading__dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.loading__dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes dot-animation {
+  0%,
+  80%,
+  100% {
+    @apply opacity-0;
+  }
+  40% {
+    @apply opacity-100;
+  }
+}
+
+/* Scrollbar */
+
+/* root::-webkit-scrollbar {
+  display: none;
+}
+
+body:hover::-webkit-scrollbar {
+  width: 10px;
+  display: block;
+  position: absolute;
+}
+
+body::-webkit-scrollbar-track {
+  width: 10px;
+  @apply bg-black;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-pink;
+} */
