@@ -15,10 +15,23 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Astro description"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
     <title>{title}</title>
   </head>
 
@@ -30,7 +43,9 @@ const { title } = Astro.props;
       <div class="loading__dot"></div>
       <div class="loading__dot"></div>
     </div>
-    <main class="mt-24 max-w-[90%] sm:max-w-[75%] md:max-w-[80%] xl:max-w-[60%] mx-auto">
+    <main
+      class="mt-24 max-w-[90%] sm:max-w-[75%] md:max-w-[80%] xl:max-w-[60%] mx-auto"
+    >
       <slot />
     </main>
     <Footer client:idle />
@@ -38,7 +53,9 @@ const { title } = Astro.props;
   <script>
     window.addEventListener('load', function () {
       const loadingDiv = document.getElementById('loading');
-      loadingDiv.style.display = 'none';
+      if (loadingDiv) {
+        loadingDiv.style.display = 'none';
+      }
     });
   </script>
 </html>
