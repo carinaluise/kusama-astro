@@ -6,8 +6,8 @@ import Button from './Button';
 const NewsletterCTA = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <aside class="lg:w-[40%] text-center mx-auto">
-      <h3 class="text-2xl mb-4">Stay in the Loop</h3>
+    <aside class="mx-auto text-center lg:w-[40%]">
+      <h3 class="mb-4 text-2xl">Stay in the Loop</h3>
       <p class="text-sm">
         NewsletterCTA to the newsletter to hear about Kusama updates and
         events.
@@ -25,7 +25,7 @@ const NewsletterCTA = () => {
           portalId="7592558"
           formId="f4e0ded8-88d1-450d-a490-10bd202050a1"
           onSubmit={() => setIsOpen(false)}
-          onReady={(form) => console.log('Form ready!')}
+          onReady={form => console.log('Form ready!')}
           loading={<div>Loading...</div>}
         />
       </Modal>

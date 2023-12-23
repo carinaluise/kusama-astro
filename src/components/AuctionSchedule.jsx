@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import auctionData from '../data/components/auctions';
 
 const AuctionSchedule = () => {
@@ -8,19 +7,19 @@ const AuctionSchedule = () => {
     end: '#8023773',
   });
 
-  const handleAuctionChange = (event) => {
+  const handleAuctionChange = event => {
     const selectedIndex = Number(event.target.value);
     setSelectedAuction(auctionData[selectedIndex]);
   };
 
   return (
     <div className="">
-      <h3 className="text-center mb-12 xl:mb-24">
+      <h3 className="mb-12 text-center xl:mb-24">
         Full Auction Schedule
       </h3>
       <div className="mx-auto text-center">
         <select
-          className="w-full sm:w-1/2 bg-pink px-32 py-2"
+          className="w-full bg-pink px-32 py-2 sm:w-1/2"
           onChange={handleAuctionChange}
         >
           {auctionData.map((auction, index) => (
@@ -35,8 +34,8 @@ const AuctionSchedule = () => {
         </select>
       </div>
       {selectedAuction && (
-        <div className="sm:w-3/4 mx-auto my-12 sm:my-24">
-          <div className="border-b-[1px] border-gray/20 pb-4 mb-4">
+        <div className="mx-auto my-12 sm:my-24 sm:w-3/4">
+          <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
             <h5>Auction Starts</h5>
             {selectedAuction.hasOwnProperty('winners') ? (
               <a
@@ -49,7 +48,7 @@ const AuctionSchedule = () => {
             )}
           </div>
           {selectedAuction.hasOwnProperty('endStart') && (
-            <div className="border-b-[1px] border-gray/20 pb-4 mb-4">
+            <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
               <h5>Ending Period Starts</h5>
               <a
                 href={`https://kusama.subscan.io/block/${selectedAuction.endStart}`}
@@ -58,7 +57,7 @@ const AuctionSchedule = () => {
               </a>
             </div>
           )}
-          <div className="border-b-[1px] border-gray/20 pb-4 mb-4">
+          <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
             <h5>Bidding Ends</h5>
             {selectedAuction.hasOwnProperty('winners') ? (
               <a
@@ -71,7 +70,7 @@ const AuctionSchedule = () => {
             )}
           </div>
           {selectedAuction.hasOwnProperty('winners') && (
-            <div className="border-b-[1px] border-gray/20 pb-4 mb-4">
+            <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
               <h5>Winning parachain(s) onboarded:</h5>
               <p>
                 {selectedAuction.winners.map((winner, index) => (
@@ -89,7 +88,7 @@ const AuctionSchedule = () => {
               </p>
             </div>
           )}
-          <p className="opacity-70 text-sm">
+          <p className="text-sm opacity-70">
             The block numbers listed above can change based on network
             block production and the potential for skipped blocks. Click
             on the block number for an estimate of the date and time.

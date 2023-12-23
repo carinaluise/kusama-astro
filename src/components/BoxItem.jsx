@@ -15,7 +15,7 @@ const BoxItem = ({ title, p1, p2, structure = 'default' }) => {
   );
 
   const defaultBox = () => (
-    <article className="mx-auto relative w-[90%] md:w-[70%] lg:left-1/4 lg:w-1/2">
+    <article className="relative mx-auto w-[90%] md:w-[70%] lg:left-1/4 lg:w-1/2">
       <div className={`border-2 border-pink px-8 py-8 md:py-12`}>
         <h2>{title}</h2>
         <p>{p1}</p>
@@ -26,19 +26,19 @@ const BoxItem = ({ title, p1, p2, structure = 'default' }) => {
           translateX: boxAnimation,
           translateY: boxAnimation,
         }}
-        className="absolute top-0 left-0 w-full border-2 h-full border-pink"
+        className="absolute left-0 top-0 h-full w-full border-2 border-pink"
       ></motion.div>
     </article>
   );
   const smallBox = () => (
     <article className="relative mx-auto w-[90%] md:w-72 lg:w-1/4">
-      <div className="border-2 border-pink px-8 py-8 md:py-12 h-full">
+      <div className="h-full border-2 border-pink px-8 py-8 md:py-12">
         <h2 className="mb-12">{title}</h2>
-        <p className="flex w-full text-lg mb-6 justify-between">
+        <p className="mb-6 flex w-full justify-between text-lg">
           <a className="w-2/3">{p1}</a>
           <span className="mx-8">→</span>
         </p>
-        <p className="flex w-full text-lg mb-6 justify-between">
+        <p className="mb-6 flex w-full justify-between text-lg">
           <a className="w-2/3">{p2}</a>
           <span className="mx-8">→</span>
         </p>
@@ -48,7 +48,7 @@ const BoxItem = ({ title, p1, p2, structure = 'default' }) => {
           translateY: boxAnimationSmall,
           translateX: boxAnimationSmall,
         }}
-        className="absolute bottom-1 md:bottom-0 md:top-2 left-0 w-full border-2 h-full border-pink"
+        className="absolute bottom-1 left-0 h-full w-full border-2 border-pink md:bottom-0 md:top-2"
       ></motion.div>
     </article>
   );

@@ -26,11 +26,11 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="h-auto fixed top-0 w-full bg-black z-50 border-b-[1px] border-gray/30">
-      <nav className="py-2 flex flex-wrap justify-between items-center max-w-[90%] sm:max-w-[75%] md:max-w-[80%] xl:max-w-[60%] mx-auto">
+    <header className="fixed top-0 z-50 h-auto w-full border-b-[1px] border-gray/30 bg-black">
+      <nav className="mx-auto flex max-w-[90%] flex-wrap items-center justify-between py-2 sm:max-w-[75%] md:max-w-[80%] xl:max-w-[60%]">
         <a href="/">
           <img
-            className="pb-2 w-32"
+            className="w-32 pb-2"
             src="/images/logo.svg"
             alt=""
           />
@@ -55,7 +55,7 @@ const Header = () => {
 const Menu = () => {
   return (
     <ul className="flex flex-wrap items-center gap-6 text-white">
-      {headerRoutes.map((item) => (
+      {headerRoutes.map(item => (
         <li
           key={item.title}
           className="opacity-50"

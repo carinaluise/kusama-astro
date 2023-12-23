@@ -18,13 +18,13 @@ const YoutubeEmbed = ({
   const isValueInit = Boolean(value);
   const cookiesEnabled =
     isValueInit &&
-    Object.values(value).every((option) => option === true);
+    Object.values(value).every(option => option === true);
 
   return (
     <div
       className={cx([
         containerClassNames,
-        'relative aspect-w-16 aspect-h-9 overflow-hidden rounded border-0 border-current ',
+        'aspect-w-16 aspect-h-9 border-current relative overflow-hidden rounded border-0 ',
       ])}
     >
       <CustomThumbnail
@@ -38,7 +38,7 @@ const YoutubeEmbed = ({
         <div className="absolute top-0 h-full w-full">
           {cookiesEnabled && (
             <iframe
-              className="border-1 border-currrent rounded w-full h-full"
+              className="border-1 border-currrent h-full w-full rounded"
               title={title}
               allow="fullscreen; encrypted-media accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               loading="lazy"
@@ -81,7 +81,7 @@ const CustomThumbnail = ({ title, thumbnail, onClick }) => {
       />
       <div className="absolute inset-0 flex items-center justify-center">
         <button
-          className="outline-none focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary"
+          className="focus-visible:outline-primary outline-none focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2"
           role="button"
           alt={title}
           onClick={onClick}
@@ -99,8 +99,8 @@ const CustomThumbnail = ({ title, thumbnail, onClick }) => {
 
 const CookieOverlay = ({ id, acceptAll }) => {
   return (
-    <div className="flex flex-col items-center justify-center h-full bg-black bg-opacity-95 text-white">
-      <h3 className="mt-8 mb-4 text-center font-heading text-white sm:mt-4">
+    <div className="flex h-full flex-col items-center justify-center bg-black bg-opacity-95 text-white">
+      <h3 className="font-heading mb-4 mt-8 text-center text-white sm:mt-4">
         You must enable all cookie types to play this video
       </h3>
       <div className="mt-4 flex flex-col sm:flex-row sm:space-x-4 ">

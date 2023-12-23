@@ -6,18 +6,18 @@ import FAQData from '../data/components/faq';
 const FAQ = () => {
   const [activeTab, setActiveTab] = useState('Parachains');
 
-  const handleTabClick = (categoryName) => {
+  const handleTabClick = categoryName => {
     setActiveTab(categoryName);
   };
 
   return (
-    <div className="md:w-3/4 mx-auto my-24">
+    <div className="mx-auto my-24 md:w-3/4">
       <h2 className="mb-8">FAQ</h2>
       <div className="flex">
-        {FAQData.map((faq) => (
+        {FAQData.map(faq => (
           <div key={faq.category}>
             <button
-              className={`mr-8 pb-0 mb-4 ${
+              className={`mb-4 mr-8 pb-0 ${
                 activeTab === faq.category
                   ? 'border-b-2 border-pink'
                   : ''
@@ -30,8 +30,8 @@ const FAQ = () => {
         ))}
       </div>
       <div>
-        {FAQData.find((item) => item.category === activeTab).items.map(
-          (item) => (
+        {FAQData.find(item => item.category === activeTab).items.map(
+          item => (
             <AccordionItem
               key={item.question}
               client:load

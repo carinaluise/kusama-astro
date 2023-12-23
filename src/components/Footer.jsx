@@ -7,19 +7,19 @@ const Footer = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <footer className="px-4 mt-4 bg-black z-50">
+      <footer className="z-50 mt-4 bg-black px-4">
         <nav className="mx-auto w-fit">
-          <div className="w-full py-2 flex flex-wrap gap-x-16">
-            {footerRoutes.map((menu) => (
+          <div className="flex w-full flex-wrap gap-x-16 py-2">
+            {footerRoutes.map(menu => (
               <ul
                 key={menu.title}
                 className="mb-8"
               >
                 <h5 className="mb-4">{menu.title}</h5>
-                {menu.items.map((item) => (
+                {menu.items.map(item => (
                   <li
                     key={item.title}
-                    className="max-w-[20vh] sm:max-w-[12vh] md:max-w-[16ch] lg:max-w-full text-sm mb-2 opacity-50"
+                    className="mb-2 max-w-[20vh] text-sm opacity-50 sm:max-w-[12vh] md:max-w-[16ch] lg:max-w-full"
                   >
                     <a href={item.link}>{item.title}</a>
                   </li>
@@ -27,7 +27,7 @@ const Footer = () => {
               </ul>
             ))}
           </div>
-          <ul className="max-w-full mt-4 mb-8 text-[10px] flex justify-center gap-2">
+          <ul className="mb-8 mt-4 flex max-w-full justify-center gap-2 text-[10px]">
             <li className="opacity-50">© 2023 Kusama</li>
             <span>·</span>
             <li>

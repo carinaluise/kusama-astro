@@ -16,7 +16,7 @@ const Toggle = ({
   disabled = false,
 }) => {
   return (
-    <div className="flex align-middle mb-4">
+    <div className="mb-4 flex align-middle">
       <Switch
         tabIndex={0}
         role="switch"
@@ -25,7 +25,7 @@ const Toggle = ({
         checked={checked}
         onChange={onChange}
         className={cx(
-          'relative mt-1 mr-4 inline-flex h-5 w-10 flex-shrink-0 cursor-pointer transition-colors duration-200 ease-in-out focus:ring-2 focus:ring-',
+          'focus:ring- relative mr-4 mt-1 inline-flex h-5 w-10 flex-shrink-0 cursor-pointer transition-colors duration-200 ease-in-out focus:ring-2',
           checked === true && !disabled ? 'bg-pink' : 'bg-gray',
           { 'cursor-default': disabled }
         )}
@@ -73,8 +73,8 @@ const CookieModal = ({ closeModal, isOpen }) => {
       : setToggleValues(cookieSettings);
   }, [isOpen, cookieSettings]);
 
-  const handleToggleChange = (toggleName) => {
-    setToggleValues((prevValues) => ({
+  const handleToggleChange = toggleName => {
+    setToggleValues(prevValues => ({
       ...prevValues,
       [toggleName]: !prevValues[toggleName],
     }));
@@ -91,7 +91,7 @@ const CookieModal = ({ closeModal, isOpen }) => {
       closeModal={closeModal}
     >
       <div>
-        <h3 className="mb-9 text-white text-center leading-snug md:px-6 ">
+        <h3 className="mb-9 text-center leading-snug text-white md:px-6 ">
           Cookie Settings
         </h3>
         {toggleData.map(({ label, description, required, key }) => {

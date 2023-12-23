@@ -11,7 +11,7 @@ import { useState, useEffect, useCallback } from 'react';
 // If we need to set the value on click
 // <Button onClick={() => set(Math.random())}>click me</Button>
 
-const parseItem = (item) => {
+const parseItem = item => {
   try {
     return item ? JSON.parse(item) : null;
   } catch (e) {
@@ -19,7 +19,7 @@ const parseItem = (item) => {
   }
 };
 
-const getLocalStorageItem = (key) => {
+const getLocalStorageItem = key => {
   const item =
     typeof window !== 'undefined'
       ? window.localStorage.getItem(key)
@@ -27,13 +27,13 @@ const getLocalStorageItem = (key) => {
   return parseItem(item);
 };
 
-const useLocalStorage = (key) => {
+const useLocalStorage = key => {
   const [value, setValue] = useState(() => {
     return getLocalStorageItem(key);
   });
 
   useEffect(() => {
-    const handleStorageChange = (event) => {
+    const handleStorageChange = event => {
       if (event.key === key) {
         setValue(parseItem(event.newValue));
       }
@@ -46,7 +46,7 @@ const useLocalStorage = (key) => {
   }, [key]);
 
   const setItem = useCallback(
-    (value) => {
+    value => {
       const oldValue = localStorage.getItem(key);
       const newValue = JSON.stringify(value);
 

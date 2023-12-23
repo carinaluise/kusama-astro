@@ -19,14 +19,14 @@ const CustomSwiper = () => {
   return (
     <section>
       <Swiper
-        className="overflow-hidden max-h-[40vh] md:max-h-[30vh] lg:max-h-[30vh]"
+        className="max-h-[40vh] overflow-hidden md:max-h-[30vh] lg:max-h-[30vh]"
         effect={'flip'}
         direction={'vertical'}
         onSlideChange={({ activeIndex }) => setActiveIndex(activeIndex)}
         pagination={true}
         spaceBetween={0}
         mousewheel={true}
-        modules={[Mousewheel, Pagination, EffectFlip]}
+        modules={[Mousewheel, Pagination, EffectFlip, Autoplay]}
         slidesPerView={0}
       >
         {swiperData.map((group, index) => (
@@ -37,11 +37,11 @@ const CustomSwiper = () => {
             {activeIndex === index && (
               <div
                 key={index}
-                className="flex flex-wrap h-full"
+                className="flex h-full flex-wrap"
               >
                 {group.items.map((item, itemIndex) => (
                   <div
-                    className="flex flex-col justify-center max-w-[90%] md:max-w-[45%] lg:max-w-[30%] mx-auto"
+                    className="mx-auto flex max-w-[90%] flex-col justify-center md:max-w-[45%] lg:max-w-[30%]"
                     key={item.title}
                   >
                     <h6
@@ -53,7 +53,7 @@ const CustomSwiper = () => {
                     >
                       {item.description.toUpperCase()}
                     </h6>
-                    <h5 className="text-xl mb-2">
+                    <h5 className="mb-2 text-xl">
                       {item.title.toUpperCase()}
                     </h5>
                     <p className="text-[12px] lg:text-sm">

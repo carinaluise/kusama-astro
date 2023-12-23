@@ -6,7 +6,7 @@ const AccordionItem = ({ title, content }) => {
   const randomId = Math.random().toString(36).substring(7);
 
   const handleExpandItem = () => {
-    setIsExpanded((IsExpanded) => !IsExpanded);
+    setIsExpanded(IsExpanded => !IsExpanded);
   };
 
   return (
@@ -17,7 +17,7 @@ const AccordionItem = ({ title, content }) => {
         id={title}
         aria-expanded={isExpanded ? 'true' : 'false'}
       >
-        <p className="text-sm text-left text-pink">{title}</p>
+        <p className="text-left text-sm text-pink">{title}</p>
       </button>
       <div>
         <AnimatePresence initial={false}>
@@ -25,10 +25,21 @@ const AccordionItem = ({ title, content }) => {
             <motion.div
               key="accordion"
               className="overflow-hidden pt-4"
-              initial={{ opacity: 0, height: '0px' }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: '0px' }}
-              transition={{ duration: 0.6 }}
+              initial={{
+                opacity: 0,
+                height: '0px',
+              }}
+              animate={{
+                opacity: 1,
+                height: 'auto',
+              }}
+              exit={{
+                opacity: 0,
+                height: '0px',
+              }}
+              transition={{
+                duration: 0.6,
+              }}
               role="region"
               aria-labelledby={title}
             >

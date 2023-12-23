@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 html {
-  @apply font-mono text-white bg-black bg-cover max-w-full;
+  @apply max-w-full bg-black bg-cover font-mono text-white;
 }
 
 ::selection {
@@ -12,19 +12,19 @@ html {
 }
 
 p {
-  @apply my-4 text-base text-white/90 opacity-90 tracking-tight leading-loose;
+  @apply my-4 text-base leading-loose tracking-tight text-white/90 opacity-90;
 }
 
 h1 {
-  @apply text-xl md:text-2xl lg:text-4xl leading-tight;
+  @apply text-xl leading-tight md:text-2xl lg:text-4xl;
 }
 
 h2 {
-  @apply mb-4 font-bold font-space text-[28px] lg:text-2xl leading-tight;
+  @apply mb-4 font-space text-[28px] font-bold leading-tight lg:text-2xl;
 }
 
 h3 {
-  @apply mb-4 font-bold font-space lg:text-xl leading-relaxed;
+  @apply mb-4 font-space font-bold leading-relaxed lg:text-xl;
 }
 
 h4 {
@@ -47,11 +47,11 @@ section {
 /* Pagination Styling */
 
 .swiper-pagination {
-  @apply absolute top-24 md:top-16 left-[98%] md:left-1/2 text-white;
+  @apply absolute left-[98%] top-24 text-white md:left-1/2 md:top-16;
 }
 
 .swiper-pagination-bullet {
-  @apply opacity-100 mb-2 block w-[6px] h-[6px] bg-gray/50 relative z-50;
+  @apply relative z-50 mb-2 block h-[6px] w-[6px] bg-gray/50 opacity-100;
 }
 
 .swiper-pagination-bullet-active {
@@ -70,11 +70,11 @@ section {
 
 .hs-form-field input,
 .hs-form-field select {
-  @apply border-[1px] mt-4 rounded-sm border-gray/10 w-full p-2;
+  @apply mt-4 w-full rounded-sm border-[1px] border-gray/10 p-2;
 }
 
 .hs-main-font-element h1 {
-  @apply text-2xl mb-12;
+  @apply mb-12 text-2xl;
 }
 
 .is-placeholder {
@@ -82,11 +82,11 @@ section {
 }
 
 .hs-error-msg {
-  @apply !text-pink text-xs;
+  @apply text-xs !text-pink;
 }
 
 .hs-form-booleancheckbox-display input {
-  @apply p-0 inline w-4 mb-0;
+  @apply mb-0 inline w-4 p-0;
 }
 
 .hs-form-booleancheckbox-display {
@@ -94,17 +94,17 @@ section {
 }
 
 .hs-button {
-  @apply bg-pink text-white p-2 hover:cursor-pointer;
+  @apply bg-pink p-2 text-white hover:cursor-pointer;
 }
 
 /* Loading Animation */
 
 #loading {
-  @apply flex justify-center items-center fixed top-0 left-0 w-full h-full bg-black z-50;
+  @apply fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black;
 }
 
 .loading__dot {
-  @apply w-[5px] h-[5px] bg-white mx-2 opacity-0;
+  @apply mx-2 h-[5px] w-[5px] bg-white opacity-0;
   animation: dot-animation 1.5s infinite;
 }
 

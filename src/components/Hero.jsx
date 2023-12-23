@@ -9,8 +9,13 @@ const Hero = () => {
   const scale2 = useTransform(scrollY, [690, 700], [1, 0]);
 
   return (
-    <div className="pb-56 overflow-hidden max-w-screen h-screen flex justify-center items-center">
-      <motion.div style={{ scale: scale2, position: 'fixed' }}>
+    <div className="max-w-screen flex h-screen items-center justify-center overflow-hidden pb-56">
+      <motion.div
+        style={{
+          scale: scale2,
+          position: 'fixed',
+        }}
+      >
         <motion.div
           style={{ opacity, scale }}
           className="overflow-hidden text-white"
@@ -20,11 +25,11 @@ const Hero = () => {
             src={`/images/kusama.gif`}
             alt="Kusama GIF"
           />
-          <h1 className=" w-full text-center font-bold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <h1 className=" absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform text-center font-bold">
             PARACHAINS ARE HERE
           </h1>
           <a
-            className="absolute top-100% md:top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            className="top-100% absolute left-1/2 -translate-x-1/2 -translate-y-1/2 transform md:top-[90%]"
             href="/parachains"
           >
             <Button>Learn more</Button>

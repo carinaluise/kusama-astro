@@ -16,13 +16,13 @@ const Canary = () => {
     <motion.section>
       <motion.h2
         style={{ y: meshAnimation2 }}
-        className="text-2xl z-20 relative top-20 md:top-10 lg:top-60 w-1/2 lg:w-1/3"
+        className="relative top-20 z-20 w-1/2 text-2xl md:top-10 lg:top-60 lg:w-1/3"
       >
         Develop on the Canary Network
       </motion.h2>
       <img
         src={`/images/mesh.png`}
-        className="mx-auto opacity-40 w-3/4"
+        className="mx-auto w-3/4 opacity-40"
       />
       <motion.p
         style={{ y: meshAnimation2 }}
