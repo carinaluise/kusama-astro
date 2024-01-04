@@ -1,11 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, MotionValue } from 'framer-motion';
 
 interface BoxTypes {
   title: string;
   p1: string;
   p2: string;
-  boxAnimation: any;
+  boxAnimation: MotionValue<string>;
   'client:load': true;
 }
 

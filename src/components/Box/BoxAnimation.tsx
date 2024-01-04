@@ -1,4 +1,5 @@
-import React, { useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { useScroll, useTransform } from 'framer-motion';
 
 import BoxSmall from './BoxSmall';
 import Box from './Box';

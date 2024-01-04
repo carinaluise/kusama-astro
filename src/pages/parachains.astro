@@ -7,7 +7,12 @@ import Stripes1 from '../images/parachains/stripes1.svg';
 import Stripes2 from '../images/parachains/stripes2.svg';
 import ParachainHero from '../images/parachains/hero.png';
 
-import parachainsData from '../data/pages/parachains';
+import {
+  parachainsData,
+  ParachainTypes,
+  AuctionInfoTypes,
+  NFTTypes,
+} from '../data/pages/parachains';
 ---
 
 <Layout title="parachains">
@@ -52,7 +57,7 @@ import parachainsData from '../data/pages/parachains';
     </p>
     <ul class="my-8 flex flex-wrap">
       {
-        parachainsData.paraverse.map(item => (
+        parachainsData.paraverse.map((item: ParachainTypes) => (
           <li class="my-4 gap-8 md:w-[45%] xl:w-1/3">
             <Image
               class="mb-4"
@@ -121,7 +126,7 @@ import parachainsData from '../data/pages/parachains';
     <h2 class="text-center">How auctions work</h2>
     <div class="mt-8 flex flex-wrap justify-center gap-4">
       {
-        parachainsData.auctionInfo.map(info => (
+        parachainsData.auctionInfo.map((info: AuctionInfoTypes) => (
           <div class="border-[1px] border-pink p-8 md:basis-[45%] ">
             <h3 class="mb-4">{info.title}</h3>
             <p class="text-sm">{info.description}</p>
@@ -142,7 +147,7 @@ import parachainsData from '../data/pages/parachains';
     <div class="mx-auto mb-24 text-center md:w-2/3">
       <h2 class="mb-8">
         This bird breaks down walls. <br />
-         Parachain launch NFTs
+        Parachain launch NFTs
       </h2>
       <p class="text-sm">
         Three limited edition NFTs were created to celebrate the
@@ -156,7 +161,7 @@ import parachainsData from '../data/pages/parachains';
     </div>
     <div class="mb-24 flex flex-wrap justify-center gap-4">
       {
-        parachainsData.nfts.map(nft => (
+        parachainsData.nfts.map((nft: NFTTypes) => (
           <div class="bg-[#2D2D2D] lg:w-[29%]">
             <Image
               alt=""
@@ -172,3 +177,4 @@ import parachainsData from '../data/pages/parachains';
     </div>
   </section>
 </Layout>
+../data/pages/parachains.ts

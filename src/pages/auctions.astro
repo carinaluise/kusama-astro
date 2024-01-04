@@ -10,7 +10,11 @@ import FAQ from '../components/Faq/Faq';
 import YoutubeEmbed from '../components/YoutubeEmbed/YoutubeEmbed';
 import AuctionSchedule from '../components/AuctionSchedule';
 
-import AuctionsData from '../data/pages/auctions';
+import {
+  AuctionsData,
+  AuctionTypes,
+  Crowdloans2Types,
+} from '../data/pages/auctions';
 ---
 
 <Layout title="Auctions">
@@ -47,7 +51,7 @@ import AuctionsData from '../data/pages/auctions';
     </div>
     <ul class="mb-16 flex flex-wrap justify-between">
       {
-        AuctionsData.participate.map((step: any) => (
+        AuctionsData.participate.map((step: AuctionTypes) => (
           <li class="mb-4 w-full border-[1px] border-pink px-4 py-4 md:w-[49%] md:py-8 lg:w-[32%]">
             <div>
               <Image
@@ -82,23 +86,25 @@ import AuctionsData from '../data/pages/auctions';
     </div>
     <ul class="flex flex-wrap gap-4">
       {
-        AuctionsData.mechanics.map((step: any, i: any) => (
-          <li class="md:w-[29%]">
-            <div>
-              <div class="relative mb-4 w-44 md:w-48">
-                <Image
-                  class=""
-                  src={step.img}
-                  alt=""
-                />
-                <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-3xl md:text-6xl">
-                  {i + 1}
-                </span>
+        AuctionsData.mechanics.map(
+          (mechanicsStep: AuctionTypes, i: number) => (
+            <li class="md:w-[29%]">
+              <div>
+                <div class="relative mb-4 w-44 md:w-48">
+                  <Image
+                    class=""
+                    src={mechanicsStep.img}
+                    alt=""
+                  />
+                  <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-3xl md:text-6xl">
+                    {i + 1}
+                  </span>
+                </div>
+                <p class="text-sm">{mechanicsStep.description} </p>
               </div>
-              <p class="text-sm">{step.description} </p>
-            </div>
-          </li>
-        ))
+            </li>
+          )
+        )
       }
     </ul>
     <YoutubeEmbed
@@ -157,23 +163,25 @@ import AuctionsData from '../data/pages/auctions';
     </div>
     <ul class="flex flex-wrap gap-4">
       {
-        AuctionsData.crowdloans.map((step: any, i: any) => (
-          <li class="md:w-[29%]">
-            <div>
-              <div class="relative mb-4 w-44 md:w-48">
-                <Image
-                  class=""
-                  src={step.img}
-                  alt=""
-                />
-                <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-3xl md:text-6xl">
-                  {i + 1 + 5}
-                </span>
+        AuctionsData.crowdloans.map(
+          (crowdloanStep: AuctionTypes, i: number) => (
+            <li class="md:w-[29%]">
+              <div>
+                <div class="relative mb-4 w-44 md:w-48">
+                  <Image
+                    class=""
+                    src={crowdloanStep.img}
+                    alt=""
+                  />
+                  <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-3xl md:text-6xl">
+                    {i + 1 + 5}
+                  </span>
+                </div>
+                <p class="text-sm">{crowdloanStep.description} </p>
               </div>
-              <p class="text-sm">{step.description} </p>
-            </div>
-          </li>
-        ))
+            </li>
+          )
+        )
       }
     </ul>
     <YoutubeEmbed
@@ -198,25 +206,29 @@ import AuctionsData from '../data/pages/auctions';
       </div>
       <div>
         {
-          AuctionsData.crowdloans2.map(step => (
-            <div class="mb-8 flex flex-wrap items-start">
-              <div class="sm:w-1/3">
-                <h4 class="mt-1 text-xl sm:max-w-[30%]">
-                  {step.title}
-                </h4>
+          AuctionsData.crowdloans2.map(
+            (crowdloansStep: Crowdloans2Types) => (
+              <div class="mb-8 flex flex-wrap items-start">
+                <div class="sm:w-1/3">
+                  <h4 class="mt-1 text-xl sm:max-w-[30%]">
+                    {crowdloansStep.title}
+                  </h4>
+                </div>
+                <p class="my-0 sm:w-2/3">
+                  {crowdloansStep.description}
+                </p>
+                {'videoSrc' in crowdloansStep && (
+                  <YoutubeEmbed
+                    client:idle
+                    containerClassNames="aspect-video my-24 h-full w-full md:w-2/3 relative md:left-1/3 my-4"
+                    title={crowdloansStep.title}
+                    id={crowdloansStep.videoSrc}
+                    thumbnail={crowdloansStep.thumbnail}
+                  />
+                )}
               </div>
-              <p class="my-0 sm:w-2/3">{step.description}</p>
-              {'videoSrc' in step && (
-                <YoutubeEmbed
-                  client:idle
-                  containerClassNames="aspect-video my-24 h-full w-full md:w-2/3 relative md:left-1/3 my-4"
-                  title={step.title}
-                  id={step.videoSrc}
-                  thumbnail={step.thumbnail}
-                />
-              )}
-            </div>
-          ))
+            )
+          )
         }
       </div>
       <div class="mx-auto my-8 text-center sm:w-1/3">
@@ -249,7 +261,7 @@ import AuctionsData from '../data/pages/auctions';
           <Button>
             Learn more
             <br />
-             about avoiding scams
+            about avoiding scams
           </Button>
         </div>
       </div>
@@ -257,3 +269,4 @@ import AuctionsData from '../data/pages/auctions';
     <FAQ client:load />
   </section>
 </Layout>
+../data/pages/auctions.ts

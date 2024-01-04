@@ -12,7 +12,12 @@ import { Image } from 'astro:assets';
 import Mesh from '../images/index/mesh.png';
 import Playground from '../images/index/playground.png';
 
-import indexData from '../data/pages/index';
+import {
+  indexData,
+  BoxItemTypes,
+  CustomBlockchainTypes,
+  BringToYourProjectTypes,
+} from '../data/pages/index';
 ---
 
 <Layout title="Kusama">
@@ -56,7 +61,7 @@ import indexData from '../data/pages/index';
       p2="Kusama was founded in 2019 by Gavin Wood, founder of Polkadot and co-founder and former CTO of Ethereum."
     />
     <div>
-      <section class="lg:sticky lg:top-32">
+      <section class="lg:sticky lg:top-12">
         <h2 class="relative top-48 z-20 w-1/2 text-2xl lg:w-[350px]">
           Launch your custom blockchain
         </h2>
@@ -71,21 +76,23 @@ import indexData from '../data/pages/index';
           class="relative mt-4 md:left-24 md:w-3/4 lg:left-1/2 lg:w-1/2"
         >
           {
-            indexData.customBlockchain.map(item => {
-              return (
-                <li class="mb-16 lg:last:pb-[80vh]">
-                  <div class="mb-4 flex gap-4">
-                    <Image
-                      class="w-8"
-                      alt=""
-                      src={item.img}
-                    />
-                    <h3 class="mb-0">{item.title}</h3>
-                  </div>
-                  <p class="w-[95%]">{item.description}</p>
-                </li>
-              );
-            })
+            indexData.customBlockchain.map(
+              (item: CustomBlockchainTypes) => {
+                return (
+                  <li class="mb-16 lg:last:pb-[80vh]">
+                    <div class="mb-4 flex gap-4">
+                      <Image
+                        class="w-8"
+                        alt=""
+                        src={item.img}
+                      />
+                      <h3 class="mb-0">{item.title}</h3>
+                    </div>
+                    <p class="w-[95%]">{item.description}</p>
+                  </li>
+                );
+              }
+            )
           }
         </ul>
       </section>
@@ -106,12 +113,14 @@ import indexData from '../data/pages/index';
       class="relative md:left-1/4 md:w-3/4 lg:left-1/2 lg:mt-96 lg:w-1/2 lg:pb-72"
     >
       {
-        indexData.bringToYourProject.map(item => (
-          <li class="mb-16">
-            <h3 class="mb-4">{item.title}</h3>
-            <p class="mb-8">{item.description}</p>
-          </li>
-        ))
+        indexData.bringToYourProject.map(
+          (item: BringToYourProjectTypes) => (
+            <li class="mb-16">
+              <h3 class="mb-4">{item.title}</h3>
+              <p class="mb-8">{item.description}</p>
+            </li>
+          )
+        )
       }
     </ul>
   </section>
@@ -174,7 +183,7 @@ import indexData from '../data/pages/index';
       class="flex flex-wrap justify-center gap-16 md:gap-12 lg:gap-16"
     >
       {
-        indexData.boxItems.map(item => (
+        indexData.boxItems.map((item: BoxItemTypes) => (
           <BoxAnimation
             client:load
             structure="small"
@@ -188,3 +197,4 @@ import indexData from '../data/pages/index';
   </section>
   <NewsletterCTA client:idle />
 </Layout>
+../data/pages/index.ts

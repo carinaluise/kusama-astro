@@ -9,30 +9,30 @@ import nft1 from '../../images/parachains/nft1.jpg';
 import nft2 from '../../images/parachains/nft2.jpg';
 import nft3 from '../../images/parachains/nft3.jpg';
 
-interface Parachain {
+export interface ParachainTypes {
   title: string;
   description: string;
   img: ImageMetadata;
 }
 
-interface AuctionInfo {
+export interface AuctionInfoTypes {
   title: string;
   description: string;
 }
 
-interface NFT {
+export interface NFTTypes {
   aside: string;
   title: string;
   img: ImageMetadata;
 }
 
 interface ParachainsDataTypes {
-  paraverse: Parachain[];
-  auctionInfo: AuctionInfo[];
-  nfts: NFT[];
+  paraverse: ParachainTypes[];
+  auctionInfo: AuctionInfoTypes[];
+  nfts: NFTTypes[];
 }
 
-const parachainsData: ParachainsDataTypes = {
+export const parachainsData: ParachainsDataTypes = {
   paraverse: [
     {
       title: 'Independent token economies',
@@ -111,5 +111,3 @@ const parachainsData: ParachainsDataTypes = {
     },
   ],
 };
-
-export default parachainsData;

@@ -5,32 +5,32 @@ import node from '../../images/index/node.svg';
 import technology from '../../images/index/technology.svg';
 import arrows from '../../images/index/arrows.svg';
 
-interface BoxItem {
+export interface BoxItemTypes {
   title: string;
   link1: string;
   link2: string;
 }
 
-interface CustomBlockchain {
+export interface CustomBlockchainTypes {
   title: string;
   description: string;
   img: ImageMetadata;
 }
 
-interface BringToYourProject {
+export interface BringToYourProjectTypes {
   title: string;
   description: string;
 }
 
 interface IndexDataTypes {
-  customBlockchain: CustomBlockchain[];
-  bringToYourProject: BringToYourProject[];
+  customBlockchain: CustomBlockchainTypes[];
+  bringToYourProject: BringToYourProjectTypes[];
   parachainsAndApplications: string[];
   ksmTokenUtilization: string[];
-  boxItems: BoxItem[];
+  boxItems: BoxItemTypes[];
 }
 
-const indexData: IndexDataTypes = {
+export const indexData: IndexDataTypes = {
   customBlockchain: [
     {
       title: 'Fast Iteration',
@@ -124,5 +124,3 @@ const indexData: IndexDataTypes = {
     },
   ],
 };
-
-export default indexData;

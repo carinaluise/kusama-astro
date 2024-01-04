@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const parseItem = (item: string | null) => {
   try {
@@ -35,7 +35,7 @@ const useLocalStorage = (key: string) => {
   }, [key]);
 
   const setItem = useCallback(
-    (value: {}) => {
+    (value: object) => {
       const oldValue = localStorage.getItem(key);
       const newValue = JSON.stringify(value);
 

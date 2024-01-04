@@ -17,32 +17,36 @@ import Square8 from '../../images/auctions/square8.png';
 import Square9 from '../../images/auctions/square9.png';
 import Square10 from '../../images/auctions/square10.png';
 
-interface AuctionItem {
-  title?: string;
+export interface AuctionTypes {
   description: string;
-  img?: ImageMetadata;
+  img: ImageMetadata;
 }
 
-interface VideoItem {
+export interface AuctionTypesV2 {
   title: string;
   description: string;
+}
+
+export interface AuctionDataVideo extends AuctionTypesV2 {
   videoSrc: string;
   thumbnail: string;
 }
 
-interface SafetyTip {
+export interface SafetyTip {
   description: string;
 }
 
-interface AuctionsDataTypes {
-  participate: AuctionItem[];
-  mechanics: AuctionItem[];
-  crowdloans: AuctionItem[];
-  crowdloans2: (AuctionItem | VideoItem)[];
+export type Crowdloans2Types = AuctionTypesV2 | AuctionDataVideo;
+
+export interface AuctionsDataTypes {
+  participate: AuctionTypes[];
+  mechanics: AuctionTypes[];
+  crowdloans: AuctionTypes[];
+  crowdloans2: Crowdloans2Types[];
   safetyTips: SafetyTip[];
 }
 
-const AuctionsData: AuctionsDataTypes = {
+export const AuctionsData: AuctionsDataTypes = {
   participate: [
     {
       description: 'Design a parachain and build it using Substrate',
@@ -181,5 +185,3 @@ const AuctionsData: AuctionsDataTypes = {
     },
   ],
 };
-
-export default AuctionsData;

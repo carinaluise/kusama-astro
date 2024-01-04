@@ -42,7 +42,7 @@ const AuctionSchedule = () => {
         <div className="mx-auto my-12 sm:my-24 sm:w-3/4">
           <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
             <h5>Auction Starts</h5>
-            {selectedAuction.hasOwnProperty('winners') ? (
+            {'winners' in selectedAuction ? (
               <a
                 href={`https://kusama.subscan.io/block/${selectedAuction.start}`}
               >
@@ -52,7 +52,7 @@ const AuctionSchedule = () => {
               <p>Block {selectedAuction.start}</p>
             )}
           </div>
-          {selectedAuction.hasOwnProperty('endStart') && (
+          {'endStart' in selectedAuction && (
             <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
               <h5>Ending Period Starts</h5>
               <a
@@ -64,7 +64,7 @@ const AuctionSchedule = () => {
           )}
           <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
             <h5>Bidding Ends</h5>
-            {selectedAuction.hasOwnProperty('winners') ? (
+            {'winners' in selectedAuction ? (
               <a
                 href={`https://kusama.subscan.io/block/${selectedAuction.end}`}
               >
@@ -74,7 +74,7 @@ const AuctionSchedule = () => {
               <p>Block {selectedAuction.start}</p>
             )}
           </div>
-          {selectedAuction.hasOwnProperty('winners') && (
+          {'winners' in selectedAuction && (
             <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
               <h5>Winning parachain(s) onboarded:</h5>
               <p>
