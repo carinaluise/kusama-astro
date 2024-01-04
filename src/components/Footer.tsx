@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { CookieModal } from './CookieModal';
+import React, { useState } from 'react';
+import { CookieModal } from './Cookie/CookieModal';
 
 import footerRoutes from '../data/components/footer';
 
 const Footer = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <>
       <footer className="z-50 mt-4 bg-black px-4">
@@ -16,14 +16,16 @@ const Footer = () => {
                 className="mb-8"
               >
                 <h5 className="mb-4">{menu.title}</h5>
-                {menu.items.map(item => (
-                  <li
-                    key={item.title}
-                    className="mb-2 max-w-[20vh] text-sm opacity-50 sm:max-w-[12vh] md:max-w-[16ch] lg:max-w-full"
-                  >
-                    <a href={item.link}>{item.title}</a>
-                  </li>
-                ))}
+                {menu.items.map(
+                  (item: { title: string; link: string }) => (
+                    <li
+                      key={item.title}
+                      className="mb-2 max-w-[20vh] text-sm opacity-50 sm:max-w-[12vh] md:max-w-[16ch] lg:max-w-full"
+                    >
+                      <a href={item.link}>{item.title}</a>
+                    </li>
+                  )
+                )}
               </ul>
             ))}
           </div>

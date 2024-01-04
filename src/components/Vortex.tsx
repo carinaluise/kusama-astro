@@ -1,4 +1,8 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, {
+  motion,
+  useScroll,
+  useTransform,
+} from 'framer-motion';
 
 const Vortex = () => {
   const { scrollYProgress } = useScroll();

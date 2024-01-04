@@ -6,15 +6,15 @@ import AuctionsHero from '../images/auctions/hero.png';
 import AuctionsMechanics from '../images/auctions/mechanics.svg';
 
 import Button from '../components/Button';
-import FAQ from '../components/FAQ';
-import YoutubeEmbed from '../components/YoutubeEmbed';
+import FAQ from '../components/Faq/Faq';
+import YoutubeEmbed from '../components/YoutubeEmbed/YoutubeEmbed';
 import AuctionSchedule from '../components/AuctionSchedule';
 
 import AuctionsData from '../data/pages/auctions';
 ---
 
 <Layout title="Auctions">
-  <section class="">
+  <section>
     <div class="lg:sticky lg:top-24">
       <Image
         class="scale-90 opacity-50"
@@ -29,8 +29,8 @@ import AuctionsData from '../data/pages/auctions';
       The key to Kusama’s scalable multichain architecture, parachains
       connect to the network by leasing a slot on the Relay Chain via
       permissionless auction. As Polkadot’s canary network, Kusama is
-      rolling out parachain auctions first for testing and optimization.
-
+      rolling out parachain auctions first for testing and
+      optimization.
 
       <br />
       <span>Expect Chaos.</span>
@@ -72,12 +72,12 @@ import AuctionsData from '../data/pages/auctions';
     <div class="mb-4 lg:w-2/3 xl:w-1/2">
       <h2 class="mb-4">Auction Mechanics</h2>
       <p>
-        Parachain slot auctions follow a modified candle auction format,
-        with each auction lasting approximately 1 week. To prevent
-        auction sniping (the strategy of bidding at the last moment) and
-        promote more accurate price discovery, the exact endpoint of a
-        particular auction remains unknown until after the auction’s
-        close.
+        Parachain slot auctions follow a modified candle auction
+        format, with each auction lasting approximately 1 week. To
+        prevent auction sniping (the strategy of bidding at the last
+        moment) and promote more accurate price discovery, the exact
+        endpoint of a particular auction remains unknown until after
+        the auction’s close.
       </p>
     </div>
     <ul class="flex flex-wrap gap-4">
@@ -114,10 +114,10 @@ import AuctionsData from '../data/pages/auctions';
     <div class="mx-auto my-24 text-center md:w-2/3">
       <h2 class="mb-4">Auction Timetable</h2>
       <p>
-        Each auction has an open bidding period of approximately 1 week
-        and assigns a total slot duration of 48 weeks (divided into 8
-        lease periods of 6 weeks each). The auction timetable is
-        determined by the Kusama Council.
+        Each auction has an open bidding period of approximately 1
+        week and assigns a total slot duration of 48 weeks (divided
+        into 8 lease periods of 6 weeks each). The auction timetable
+        is determined by the Kusama Council.
       </p>
     </div>
     <AuctionSchedule client:load />
@@ -125,11 +125,11 @@ import AuctionsData from '../data/pages/auctions';
       <h2 class="mb-4">Auction Ending Period</h2>
       <p>
         Each auction has an ending period that begins approximately 1
-        day and 21 hours after the start of the auction and lasts until
-        the end of the 1-week bidding period. The auction’s end point
-        can be any time within the ending period, and is automatically
-        and randomly chosen by the VRF at the close of the 1-week
-        bidding period.
+        day and 21 hours after the start of the auction and lasts
+        until the end of the 1-week bidding period. The auction’s end
+        point can be any time within the ending period, and is
+        automatically and randomly chosen by the VRF at the close of
+        the 1-week bidding period.
       </p>
     </div>
     <Image
@@ -144,14 +144,15 @@ import AuctionsData from '../data/pages/auctions';
       <p class="mb-4">
         Some teams may choose to crowdfund their slot lease using
         Kusama’s built-in crowdloan mechanism, which allows people to
-        contribute by agreeing to lock up their own KSM until the end of
-        the lease. Teams can reward their contributors however they see
-        fit, and can structure their crowdloan in various ways, hosting
-        it either natively on Kusama or on a 3rd-party platform.
+        contribute by agreeing to lock up their own KSM until the end
+        of the lease. Teams can reward their contributors however they
+        see fit, and can structure their crowdloan in various ways,
+        hosting it either natively on Kusama or on a 3rd-party
+        platform.
       </p>
       <p class="mb-4">
-        The typical process for a crowdloan conducted natively on Kusama
-        will look something like this:
+        The typical process for a crowdloan conducted natively on
+        Kusama will look something like this:
       </p>
     </div>
     <ul class="flex flex-wrap gap-4">
@@ -190,9 +191,9 @@ import AuctionsData from '../data/pages/auctions';
         <p>
           Be part of blockchain history by helping kick start your
           favorite Kusama parachains. Crowdloans raise the bar for
-          blockchain teams, pushing them to demonstrate their technology
-          first and get support from KSM holders in order to launch.
-          Here’s how it works:
+          blockchain teams, pushing them to demonstrate their
+          technology first and get support from KSM holders in order
+          to launch. Here’s how it works:
         </p>
       </div>
       <div>
@@ -205,7 +206,7 @@ import AuctionsData from '../data/pages/auctions';
                 </h4>
               </div>
               <p class="my-0 sm:w-2/3">{step.description}</p>
-              {step.videoSrc && (
+              {'videoSrc' in step && (
                 <YoutubeEmbed
                   client:idle
                   containerClassNames="aspect-video my-24 h-full w-full md:w-2/3 relative md:left-1/3 my-4"
@@ -227,12 +228,12 @@ import AuctionsData from '../data/pages/auctions';
           How to Protect Yourself From Crowdloan Scams
         </h2>
         <p class="mb-4">
-          Scams are unfortunately a real threat in the blockchain space
-          that requires one to be vigilant. Fake crowdloan campaigns may
-          present an attractive target for scammers. Always stay alert
-          to protect yourself and your non-refundable crypto assets. If
-          you suspect you’re being scammed, please email the Web3
-          Foundation Support Team.
+          Scams are unfortunately a real threat in the blockchain
+          space that requires one to be vigilant. Fake crowdloan
+          campaigns may present an attractive target for scammers.
+          Always stay alert to protect yourself and your
+          non-refundable crypto assets. If you suspect you’re being
+          scammed, please email the Web3 Foundation Support Team.
         </p>
         <h5 class="mb-4">Essential Rules of Thumb:</h5>
         <ul class="list-[square] marker:text-pink">

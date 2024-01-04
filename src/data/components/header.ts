@@ -1,4 +1,11 @@
-const headerRoutes = [
+interface HeaderItem {
+  title: string;
+  link: string;
+}
+
+type HeaderRoutes = HeaderItem[];
+
+const headerRoutes: HeaderRoutes = [
   {
     title: 'Parachains',
     link: '/parachains',

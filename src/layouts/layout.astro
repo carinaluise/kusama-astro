@@ -1,49 +1,62 @@
 ---
-  import Header from '../components/Header';
-  import Footer from '../components/Footer';
-  import CookieBanner from '../components/CookieBanner';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import CookieBanner from '../components/Cookie/CookieBanner';
 
-  import '../styles/global.css';
+import '../styles/global.css';
 
-  interface Props {
-    title: string;
-  }
+interface Props {
+  title: string;
+}
 
-  const { title } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Astro description"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <title>{title}</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Astro description" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="generator" content={Astro.generator} />
-  <title>{title}</title>
-</head>
-
-<body>
-  <CookieBanner client:load />
-  <Header client:load />
-  <div id="loading">
-    <div class="loading__dot"></div>
-    <div class="loading__dot"></div>
-    <div class="loading__dot"></div>
-  </div>
-  <main class="mx-auto mt-24 max-w-[90%] sm:max-w-[75%] md:max-w-[80%] xl:max-w-[60%]">
-    <slot />
-  </main>
-  <Footer client:idle />
-</body>
-<script>
-  window.addEventListener('load', function () {
-    const loadingDiv = document.getElementById('loading');
-    if (loadingDiv) {
-      loadingDiv.style.display = 'none';
-    }
-  });
-</script>
-
+  <body>
+    <CookieBanner client:load />
+    <Header client:load />
+    <div id="loading">
+      <div class="loading__dot"></div>
+      <div class="loading__dot"></div>
+      <div class="loading__dot"></div>
+    </div>
+    <main
+      class="mx-auto mt-24 max-w-[90%] sm:max-w-[75%] md:max-w-[80%] xl:max-w-[60%]"
+    >
+      <slot />
+    </main>
+    <Footer client:idle />
+  </body>
+  <script>
+    window.addEventListener('load', function () {
+      const loadingDiv = document.getElementById('loading');
+      if (loadingDiv) {
+        loadingDiv.style.display = 'none';
+      }
+    });
+  </script>
 </html>

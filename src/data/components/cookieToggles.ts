@@ -1,8 +1,18 @@
-const toggleData = [
+interface ToggleDataItem {
+  required: boolean;
+  label: string;
+  description: string;
+  key: string;
+}
+
+type ToggleData = ToggleDataItem[];
+
+const toggleData: ToggleData = [
   {
     required: true,
     label: 'Strictly necessary (always on)',
-    description: 'Essential for the basic functionality of a website.',
+    description:
+      'Essential for the basic functionality of a website.',
     key: 'necessary',
   },
   {

@@ -1,4 +1,18 @@
-const auctionData = [
+export interface AuctionWinnerTypes {
+  leaseNo: string;
+  link: string;
+}
+
+export interface AuctionTypes {
+  start: string;
+  end: string;
+  endStart?: string;
+  winners?: AuctionWinnerTypes[];
+}
+
+type AuctionData = AuctionTypes[];
+
+const auctionData: AuctionData = [
   {
     start: '#7924237',
     end: '#8023773',

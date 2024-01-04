@@ -1,4 +1,8 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, {
+  motion,
+  useScroll,
+  useTransform,
+} from 'framer-motion';
 
 const Canary = () => {
   const { scrollYProgress } = useScroll();
@@ -29,8 +33,8 @@ const Canary = () => {
         className="relative bottom-20 md:bottom-44 md:left-1/4 md:max-w-[80%] lg:bottom-20 lg:left-1/2 lg:w-1/2"
       >
         Many teams will choose Kusama for their dapp or parachain and
-        remain exclusively on Kusama. Other teams will join Kusama as a
-        temporary preparation ground for deployment on Polkadot.
+        remain exclusively on Kusama. Other teams will join Kusama as
+        a temporary preparation ground for deployment on Polkadot.
       </motion.p>
     </motion.section>
   );

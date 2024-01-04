@@ -1,7 +1,13 @@
-import { Fragment } from 'react';
+import React, { Fragment, ReactNode } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
-const Modal = ({ isOpen, closeModal, children }) => {
+interface ModalTypes {
+  isOpen: boolean;
+  closeModal: () => void;
+  children: ReactNode;
+}
+
+const Modal = ({ isOpen, closeModal, children }: ModalTypes) => {
   return (
     <Transition.Root
       show={isOpen}

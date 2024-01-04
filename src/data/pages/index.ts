@@ -5,7 +5,32 @@ import node from '../../images/index/node.svg';
 import technology from '../../images/index/technology.svg';
 import arrows from '../../images/index/arrows.svg';
 
-const indexData = {
+interface BoxItem {
+  title: string;
+  link1: string;
+  link2: string;
+}
+
+interface CustomBlockchain {
+  title: string;
+  description: string;
+  img: ImageMetadata;
+}
+
+interface BringToYourProject {
+  title: string;
+  description: string;
+}
+
+interface IndexDataTypes {
+  customBlockchain: CustomBlockchain[];
+  bringToYourProject: BringToYourProject[];
+  parachainsAndApplications: string[];
+  ksmTokenUtilization: string[];
+  boxItems: BoxItem[];
+}
+
+const indexData: IndexDataTypes = {
   customBlockchain: [
     {
       title: 'Fast Iteration',

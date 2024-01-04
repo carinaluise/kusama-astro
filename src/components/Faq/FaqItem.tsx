@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const AccordionItem = ({ title, content }) => {
+interface FaqItemTypes {
+  title: string;
+  content: ReactNode;
+}
+
+const FaqItem = ({ title, content }: FaqItemTypes) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const randomId = Math.random().toString(36).substring(7);
 
   const handleExpandItem = () => {
     setIsExpanded(IsExpanded => !IsExpanded);
@@ -54,4 +58,4 @@ const AccordionItem = ({ title, content }) => {
   );
 };
 
-export default AccordionItem;
+export default FaqItem;

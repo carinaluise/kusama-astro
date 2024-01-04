@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import AccordionItem from './AccordionItem';
+import React, { useState } from 'react';
+import FaqItem from './FaqItem';
 
-import FAQData from '../data/components/faq';
+import FAQData from '../../data/components/faq';
 
-const FAQ = () => {
-  const [activeTab, setActiveTab] = useState('Parachains');
+const Faq = () => {
+  const [activeTab, setActiveTab] = useState<string>('Parachains');
 
-  const handleTabClick = categoryName => {
+  const handleTabClick = (categoryName: string) => {
     setActiveTab(categoryName);
   };
 
@@ -30,19 +30,20 @@ const FAQ = () => {
         ))}
       </div>
       <div>
-        {FAQData.find(item => item.category === activeTab).items.map(
-          item => (
-            <AccordionItem
-              key={item.question}
-              client:load
-              title={item.question}
-              content={item.answer}
-            />
-          )
+        {FAQData.map(
+          category =>
+            category.category == activeTab &&
+            category.items.map(item => (
+              <FaqItem
+                key={item.question}
+                title={item.question}
+                content={item.answer}
+              />
+            ))
         )}
       </div>
     </div>
   );
 };
 
-export default FAQ;
+export default Faq;

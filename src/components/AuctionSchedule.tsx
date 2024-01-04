@@ -1,13 +1,18 @@
-import { useState } from 'react';
-import auctionData from '../data/components/auctions';
+import React, { useState } from 'react';
+import auctionData, {
+  AuctionTypes,
+} from '../data/components/auctions';
 
 const AuctionSchedule = () => {
-  const [selectedAuction, setSelectedAuction] = useState({
-    start: '#7924237',
-    end: '#8023773',
-  });
+  const [selectedAuction, setSelectedAuction] =
+    useState<AuctionTypes>({
+      start: '#7924237',
+      end: '#8023773',
+    });
 
-  const handleAuctionChange = event => {
+  const handleAuctionChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     const selectedIndex = Number(event.target.value);
     setSelectedAuction(auctionData[selectedIndex]);
   };
@@ -73,25 +78,28 @@ const AuctionSchedule = () => {
             <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
               <h5>Winning parachain(s) onboarded:</h5>
               <p>
-                {selectedAuction.winners.map((winner, index) => (
-                  <>
-                    <a
-                      href={winner.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Lease Period {winner.leaseNo}
-                    </a>
-                    {index === 0 && ' - '}
-                  </>
-                ))}
+                {(selectedAuction.winners ?? []).map(
+                  (winner, index) => (
+                    <React.Fragment key={index}>
+                      <a
+                        href={winner.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Lease Period {winner.leaseNo}
+                      </a>
+                      {index === 0 && ' - '}
+                    </React.Fragment>
+                  )
+                )}
               </p>
             </div>
           )}
           <p className="text-sm opacity-70">
             The block numbers listed above can change based on network
-            block production and the potential for skipped blocks. Click
-            on the block number for an estimate of the date and time.
+            block production and the potential for skipped blocks.
+            Click on the block number for an estimate of the date and
+            time.
           </p>
         </div>
       )}

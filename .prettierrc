@@ -7,12 +7,6 @@
   "trailingComma": "es5",
   "useTabs": false,
   "singleAttributePerLine": true,
-  "printWidth": 72,
-  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
-  "overrides": [
-    {
-      "files": "*.astro",
-      "options": { "parser": "astro" }
-    }
-  ]
+  "printWidth": 70,
+  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"]
 }

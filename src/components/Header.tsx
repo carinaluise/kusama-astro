@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from './Button';
 
 import headerRoutes from '../data/components/header';
 
 const Header = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const handleToggle = () => {
     setShowMenu(!showMenu);
@@ -55,7 +55,7 @@ const Header = () => {
 const Menu = () => {
   return (
     <ul className="flex flex-wrap items-center gap-6 text-white">
-      {headerRoutes.map(item => (
+      {headerRoutes.map((item: { title: string; link: string }) => (
         <li
           key={item.title}
           className="opacity-50"
@@ -124,7 +124,7 @@ const Menu = () => {
       </li>
       <li>
         <a href="https://substrate.io/">
-          <Button varient="small">Start Building</Button>
+          <Button variant="small">Start Building</Button>
         </a>
       </li>
     </ul>

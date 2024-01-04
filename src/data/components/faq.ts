@@ -1,4 +1,14 @@
-const FAQData = [
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQCategory {
+  category: string;
+  items: FAQItem[];
+}
+
+const FAQData: FAQCategory[] = [
   {
     category: 'Parachains',
     items: [

@@ -2,7 +2,7 @@
 import Layout from '../layouts/layout.astro';
 
 import Hero from '../components/Hero';
-import BoxItem from '../components/BoxItem';
+import BoxAnimation from '../components/Box/BoxAnimation';
 import Vortex from '../components/Vortex';
 import Canary from '../components/Canary';
 import NewsletterCTA from '../components/NewsletterCTA';
@@ -44,12 +44,12 @@ import indexData from '../data/pages/index';
         <p>
           Kusama is a network built as a risk-taking, fast-moving
           ‘canary in the coal mine’ for its cousin Polkadot. It's a
-          living platform built for change agents to take back control,
-          spark innovation and disrupt the status quo.
+          living platform built for change agents to take back
+          control, spark innovation and disrupt the status quo.
         </p>
       </div>
     </section>
-    <BoxItem
+    <BoxAnimation
       client:load
       title="What is Kusama?"
       p1="Kusama is a scalable network of specialized blockchains built using Substrate and nearly the same codebase as Polkadot. The network is an experimental development environment for teams who want to move fast and innovate on Kusama, or prepare for deployment on Polkadot."
@@ -157,11 +157,11 @@ import indexData from '../data/pages/index';
       />
       <p class="mb-8">
         Your Substrate Blockchain is natively compatible with Kusama,
-        making it simple to secure your blockchain and communicate with
-        Kusama's network.
+        making it simple to secure your blockchain and communicate
+        with Kusama's network.
       </p>
       <a href="https://substrate.io/">
-        <Button varient="white">Learn More</Button>
+        <Button variant="white">Learn More</Button>
       </a>
       <a href="https://docs.substrate.io/">
         <Button>Substrate Playground</Button>
@@ -175,7 +175,7 @@ import indexData from '../data/pages/index';
     >
       {
         indexData.boxItems.map(item => (
-          <BoxItem
+          <BoxAnimation
             client:load
             structure="small"
             title={item.title}

@@ -17,7 +17,32 @@ import Square8 from '../../images/auctions/square8.png';
 import Square9 from '../../images/auctions/square9.png';
 import Square10 from '../../images/auctions/square10.png';
 
-const AuctionsData = {
+interface AuctionItem {
+  title?: string;
+  description: string;
+  img?: ImageMetadata;
+}
+
+interface VideoItem {
+  title: string;
+  description: string;
+  videoSrc: string;
+  thumbnail: string;
+}
+
+interface SafetyTip {
+  description: string;
+}
+
+interface AuctionsDataTypes {
+  participate: AuctionItem[];
+  mechanics: AuctionItem[];
+  crowdloans: AuctionItem[];
+  crowdloans2: (AuctionItem | VideoItem)[];
+  safetyTips: SafetyTip[];
+}
+
+const AuctionsData: AuctionsDataTypes = {
   participate: [
     {
       description: 'Design a parachain and build it using Substrate',
@@ -135,7 +160,8 @@ const AuctionsData = {
   ],
   safetyTips: [
     {
-      description: 'Never share your seed phrase or account password.',
+      description:
+        'Never share your seed phrase or account password.',
     },
     {
       description:

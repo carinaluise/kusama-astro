@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import { useLocalStorage } from '../hooks/use-local-storage.js';
+import React, { useState, useEffect } from 'react';
+import { useLocalStorage } from '../../hooks/use-local-storage';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { CookieModal } from './CookieModal.jsx';
+import { CookieModal } from './CookieModal.js';
 
-import Button from './Button.jsx';
+import Button from '../Button.js';
 
 const CookieBanner = () => {
   const [value, setValue] = useLocalStorage('cookie-settings');
@@ -43,7 +43,7 @@ const CookieBanner = () => {
                 </p>
                 <div className="mt-2 flex items-center gap-x-2">
                   <Button
-                    varient="small"
+                    variant="small"
                     onClick={() => {
                       setValue({
                         necessary: true,
@@ -56,7 +56,7 @@ const CookieBanner = () => {
                     Accept All
                   </Button>
                   <Button
-                    varient="small"
+                    variant="small"
                     onClick={() => {
                       setValue({
                         necessary: true,
@@ -69,7 +69,7 @@ const CookieBanner = () => {
                     Reject All
                   </Button>
                   <Button
-                    varient="small"
+                    variant="small"
                     onClick={() => setIsOpen(true)}
                   >
                     Manage

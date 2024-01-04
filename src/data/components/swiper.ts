@@ -1,4 +1,14 @@
-const swiperData = [
+interface SwiperItem {
+  items: {
+    description: string;
+    title: string;
+    paragraph: string;
+  }[];
+}
+
+type SwiperData = SwiperItem[];
+
+const swiperData: SwiperData = [
   {
     items: [
       {

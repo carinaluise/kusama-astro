@@ -1,4 +1,14 @@
-const footerRoutes = [
+interface FooterItem {
+  title: string;
+  items: {
+    title: string;
+    link: string;
+  }[];
+}
+
+type FooterRoutes = FooterItem[];
+
+const footerRoutes: FooterRoutes = [
   {
     title: 'Developers',
     items: [
