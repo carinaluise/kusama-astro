@@ -64,7 +64,7 @@ const CookieModal = ({ closeModal, isOpen }: CookieModalTypes) => {
       closeModal={closeModal}
     >
       <div>
-        <h3 className="mb-9 text-center leading-snug text-white md:px-6 ">
+        <h3 className="mb-9 text-center leading-snug text-black md:px-6">
           Cookie Settings
         </h3>
         {toggleData.map(({ label, description, required, key }) => {

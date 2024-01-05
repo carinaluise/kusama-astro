@@ -26,7 +26,7 @@ const Canary = () => {
       </motion.h2>
       <img
         src={`/images/mesh.png`}
-        className="mx-auto w-3/4 opacity-40"
+        className="mx-auto w-[65%] opacity-50"
       />
       <motion.p
         style={{ y: meshAnimation2 }}

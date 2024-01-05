@@ -45,7 +45,7 @@ const CustomSwitch = ({
         checked={checked}
         onChange={onChange}
         className={cx(
-          'focus:ring- relative mr-4 mt-1 inline-flex h-5 w-10 flex-shrink-0 cursor-pointer transition-colors duration-200 ease-in-out focus:ring-2',
+          'relative mr-4 mt-1 inline-flex h-5 w-10 flex-shrink-0 cursor-pointer transition-colors duration-200 ease-in-out focus:ring-2 focus:ring-gray',
           checked === true && !disabled ? 'bg-pink' : 'bg-gray',
           { 'cursor-default': disabled }
         )}
@@ -60,8 +60,8 @@ const CustomSwitch = ({
         />
       </SwitchWrapper>
       <div>
-        <span className="font-bold">{label}</span>
-        <p className="mb-1 mt-0 text-xs text-white">{description}</p>
+        <h5 className="mb-1 font-bold text-black">{label}</h5>
+        <p className="mb-1 mt-0 text-xs text-black">{description}</p>
       </div>
     </div>
   );

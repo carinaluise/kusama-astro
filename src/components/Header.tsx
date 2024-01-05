@@ -13,7 +13,7 @@ const Header = () => {
 
   useEffect(() => {
     const checkWindowSize = () => {
-      setIsMobile(window.innerWidth <= 900);
+      setIsMobile(window.innerWidth <= 992);
     };
 
     checkWindowSize();
@@ -26,8 +26,8 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 z-50 h-auto w-full border-b-[1px] border-gray/30 bg-black">
-      <nav className="mx-auto flex max-w-[90%] flex-wrap items-center justify-between py-2 sm:max-w-[75%] md:max-w-[80%] xl:max-w-[60%]">
+    <header className="fixed top-0 z-50 h-auto w-full border-b-[1px] border-gray/50 bg-black">
+      <nav className="main-breaks mx-auto flex flex-wrap items-center justify-between py-2  md:py-4 lg:py-1">
         <a href="/">
           <img
             className="w-32 pb-2"
@@ -58,7 +58,7 @@ const Menu = () => {
       {headerRoutes.map((item: { title: string; link: string }) => (
         <li
           key={item.title}
-          className="opacity-50"
+          className="text-sm opacity-50 xl:text-[16px]"
         >
           <a href={item.link}>{item.title}</a>
         </li>

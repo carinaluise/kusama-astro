@@ -20,11 +20,11 @@ h1 {
 }
 
 h2 {
-  @apply mb-4 font-space text-[28px] font-bold leading-tight lg:text-2xl;
+  @apply mb-4 font-space text-[28px] font-bold leading-tight lg:text-[40px];
 }
 
 h3 {
-  @apply mb-4 font-space font-bold leading-relaxed lg:text-xl;
+  @apply mb-4 font-space font-bold leading-relaxed lg:text-[28px];
 }
 
 h4 {
@@ -44,6 +44,9 @@ section {
   @apply max-w-full;
 }
 
+.main-breaks {
+  @apply max-w-[90%] md:max-w-[80%] lg:max-w-[85%] xl:max-w-[75%];
+}
 /* Pagination Styling */
 
 .swiper-pagination {
@@ -61,20 +64,20 @@ section {
 /* Hubspot Form Styles  */
 
 .legal-consent-container p {
-  @apply text-xs text-white;
+  @apply text-xs text-black;
 }
 
 .hs-form-field {
-  @apply my-4;
+  @apply my-4 text-black;
 }
 
 .hs-form-field input,
 .hs-form-field select {
-  @apply mt-4 w-full rounded-sm border-[1px] border-gray/10 p-2;
+  @apply mt-4 w-full rounded-sm border-[1px] border-gray/10 p-2 text-black;
 }
 
 .hs-main-font-element h1 {
-  @apply mb-12 text-2xl;
+  @apply mb-12 text-2xl text-black;
 }
 
 .is-placeholder {
@@ -94,7 +97,7 @@ section {
 }
 
 .hs-button {
-  @apply bg-pink p-2 text-white hover:cursor-pointer;
+  @apply bg-pink p-2 hover:cursor-pointer;
 }
 
 /* Loading Animation */
