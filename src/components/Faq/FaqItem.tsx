@@ -14,21 +14,21 @@ const FaqItem = ({ title, content }: FaqItemTypes) => {
   };
 
   return (
-    <div>
+    <div className="border-b-[1px] border-gray/20">
       <button
-        className="w-3/4 border-b-[1px] border-gray/10"
+        className="w-full"
         onClick={handleExpandItem}
         id={title}
         aria-expanded={isExpanded ? 'true' : 'false'}
       >
-        <p className="text-left text-sm text-pink">{title}</p>
+        <p className="text-left text-[16px] text-pink">{title}</p>
       </button>
       <div>
         <AnimatePresence initial={false}>
           {isExpanded && (
             <motion.div
               key="accordion"
-              className="overflow-hidden pt-4"
+              className="overflow-hidden"
               initial={{
                 opacity: 0,
                 height: '0px',
@@ -42,12 +42,12 @@ const FaqItem = ({ title, content }: FaqItemTypes) => {
                 height: '0px',
               }}
               transition={{
-                duration: 0.6,
+                duration: 0.2,
               }}
               role="region"
               aria-labelledby={title}
             >
-              <div className="relative overflow-hidden text-white">
+              <div className="relative mb-2 overflow-hidden pb-8 text-base text-white">
                 {content}
               </div>
             </motion.div>

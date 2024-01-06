@@ -11,9 +11,9 @@ const Faq = () => {
   };
 
   return (
-    <div className="mx-auto my-24 md:w-3/4">
+    <div className="mx-auto my-24 lg:flex lg:w-3/4 lg:flex-col xl:w-1/2">
       <h2 className="mb-8">FAQ</h2>
-      <div className="flex">
+      <div className="flex flex-wrap">
         {FAQData.map(faq => (
           <div key={faq.category}>
             <button
