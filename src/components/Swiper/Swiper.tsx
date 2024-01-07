@@ -8,6 +8,7 @@ import {
 } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
+import 'swiper/css/effect-flip';
 import swiperData from '../../data/components/swiper';
 
 import SwiperGroup, { SwiperGroupTypes } from './SwiperGroup';
@@ -16,9 +17,9 @@ const CustomSwiper = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   return (
-    <section>
+    <section className="">
       <Swiper
-        className="max-h-[40vh] overflow-hidden md:max-h-[30vh] lg:max-h-[30vh]"
+        className="lg:max-h-[30vh max-h-[40vh] overflow-hidden md:max-h-[30vh]"
         effect={'flip'}
         direction={'vertical'}
         onSlideChange={({ activeIndex }: { activeIndex: number }) =>
