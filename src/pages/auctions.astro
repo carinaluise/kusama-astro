@@ -19,53 +19,57 @@ import {
 
 <Layout title="Auctions">
   <section>
-    <div class="lg:sticky lg:top-24">
+    <div class="relative bottom-12 lg:sticky lg:top-44">
       <Image
-        class="scale-90 opacity-50"
+        class="scale-[1] opacity-50 lg:scale-[0.8]"
         src={AuctionsHero}
         alt=""
       />
-      <h1 class="absolute top-36 w-1/2 font-bold">
+      <h1 class="absolute top-12 sm:top-32 sm:w-[15ch] lg:top-24">
         Parachain Slot Auctions
       </h1>
     </div>
-    <p class="relative md:left-24 md:w-3/4 lg:left-1/2 lg:w-1/2">
+    <p
+      class="relative md:bottom-20 md:left-24 md:w-3/4 md:w-[48ch] lg:bottom-12 lg:left-96 lg:w-1/2 xl:left-1/2"
+    >
       The key to Kusama’s scalable multichain architecture, parachains
       connect to the network by leasing a slot on the Relay Chain via
       permissionless auction. As Polkadot’s canary network, Kusama is
       rolling out parachain auctions first for testing and
       optimization.
-
+      <br />
       <br />
       <span>Expect Chaos.</span>
     </p>
   </section>
   <section>
     <div class="mb-8 lg:w-1/2">
-      <h2 class="mb-8">How Do Teams Participate?</h2>
+      <h2 class="mb-4 md:mb-8">How Do Teams Participate?</h2>
       <p>
         The path to launching a parachain on Kusama will differ from
         team to team, but a typical process could look something like
         this:
       </p>
     </div>
-    <ul class="mb-16 flex flex-wrap justify-between">
+    <ul class="flex flex-wrap justify-between gap-6">
       {
         AuctionsData.participate.map((step: AuctionTypes) => (
-          <li class="mb-4 w-full border-[1px] border-pink px-4 py-4 md:w-[49%] md:py-8 lg:w-[32%]">
+          <li class="w-full border-[1px] border-pink md:basis-[calc(50%-12px)]">
             <div>
               <Image
-                class="w-12 opacity-70 md:pb-4"
+                class="m-4 w-12 md:pb-4"
                 src={step.img}
                 alt=""
               />
-              <p class="mb-0 text-sm">{step.description}</p>
+              <p class="m-4 text-[14px] leading-snug md:text-[16px]">
+                {step.description}
+              </p>
             </div>
           </li>
         ))
       }
     </ul>
-    <div class="mx-auto text-center">
+    <div class="mx-auto my-16 text-center">
       <p class="mx-auto mb-4 md:w-1/3">
         Auctions and Crowdloans Guide for Parachain Teams
       </p>

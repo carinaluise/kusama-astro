@@ -7,8 +7,8 @@ export default {
     screens: {
       sm: '576px',
       md: '768px',
-      lg: '992px',
-      xl: '1290px',
+      lg: '990px',
+      xl: '1200px',
     },
     colors: {
       white: '#fff',
@@ -25,6 +25,7 @@ export default {
     },
     extend: {
       fontSize: {
+        sm: '14px',
         base: '18px',
         xl: '1.6rem',
         '2xl': '2.2rem',

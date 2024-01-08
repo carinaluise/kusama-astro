@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 z-50 h-auto w-full border-b-[1px] border-gray/50 bg-black">
-      <nav className="main-breaks mx-auto flex flex-wrap items-center justify-between py-2  md:py-4 lg:py-1">
+      <nav className="main-breaks mx-auto flex flex-wrap items-center justify-between py-2 md:py-4 lg:py-1">
         <a href="/">
           <img
             className="w-32 pb-2"
@@ -54,7 +54,7 @@ const Header = () => {
 
 const Menu = () => {
   return (
-    <ul className="flex flex-wrap items-center gap-6 text-white">
+    <ul className="mt-2 flex flex-wrap items-center gap-x-6 text-white md:mt-0">
       {headerRoutes.map((item: { title: string; link: string }) => (
         <li
           key={item.title}

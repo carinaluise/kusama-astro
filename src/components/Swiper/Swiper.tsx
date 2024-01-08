@@ -19,7 +19,7 @@ const CustomSwiper = () => {
   return (
     <section className="overflow-hidden">
       <Swiper
-        className="max-h-[40vh] overflow-hidden md:max-h-[30vh] lg:max-h-[30vh]"
+        className="max-h-[40vh] overflow-hidden md:max-h-[40vh] lg:max-h-[40vh]"
         effect={'flip'}
         direction={'vertical'}
         onSlideChange={({ activeIndex }: { activeIndex: number }) =>

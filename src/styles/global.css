@@ -16,11 +16,11 @@ p {
 }
 
 h1 {
-  @apply text-xl leading-tight md:text-2xl lg:text-4xl;
+  @apply font-space text-[48px] font-bold leading-none md:text-[50px] xl:text-[72px];
 }
 
 h2 {
-  @apply mb-4 font-space text-[28px] font-bold leading-tight lg:text-[40px];
+  @apply mb-8 font-space text-[28px] font-bold leading-tight lg:text-[30px];
 }
 
 h3 {
@@ -32,12 +32,12 @@ h4 {
 }
 
 h5 {
-  @apply mb-4 text-lg;
+  @apply mb-4 font-space text-lg;
 }
 
 section,
 aside {
-  @apply my-16;
+  @apply my-40;
 }
 
 section {

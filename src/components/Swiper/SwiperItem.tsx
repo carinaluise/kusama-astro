@@ -23,7 +23,7 @@ const SwiperItem = ({
         {item.description.toUpperCase()}
       </h6>
       <h5 className="mb-2 text-xl">{item.title.toUpperCase()}</h5>
-      <p className="text-[12px] lg:text-sm">{item.paragraph}</p>
+      <p className="text-[12px] lg:text-[14px]">{item.paragraph}</p>
     </div>
   );
 };
