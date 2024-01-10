@@ -18,91 +18,104 @@ const AuctionSchedule = () => {
   };
 
   return (
-    <div className="">
-      <h3 className="mb-12 text-center xl:mb-24">
+    <div className="mx-auto">
+      <h3 className="mb-8 text-center xl:mb-12">
         Full Auction Schedule
       </h3>
-      <div className="mx-auto text-center">
-        <select
-          className="w-full bg-pink px-32 py-2 sm:w-1/2"
-          onChange={handleAuctionChange}
-        >
-          {auctionData.map((auction, index) => (
-            <option
-              className="text-center"
-              key={index}
-              value={index}
-            >
-              Auction {index + 1}
-            </option>
-          ))}
-        </select>
-      </div>
-      {selectedAuction && (
-        <div className="mx-auto my-12 sm:my-24 sm:w-3/4">
-          <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
-            <h5>Auction Starts</h5>
-            {'winners' in selectedAuction ? (
-              <a
-                href={`https://kusama.subscan.io/block/${selectedAuction.start}`}
+      <div className="mx-auto w-4/5 lg:w-1/2">
+        <div className="mx-auto w-4/5">
+          <select
+            className="auction-select w-full bg-pink/50 px-4 py-2"
+            onChange={handleAuctionChange}
+          >
+            {auctionData.map((auction, index) => (
+              <option
+                className="opacity-70"
+                key={index}
+                value={index}
               >
-                Block {selectedAuction.start}
-              </a>
-            ) : (
-              <p>Block {selectedAuction.start}</p>
-            )}
+                Auction {index + 1}
+              </option>
+            ))}
+          </select>
+          <div className="mx-auto flex justify-end">
+            <button className="relative bottom-10 bg-black bg-pink/90 px-4 py-2">
+              ▼
+            </button>
           </div>
-          {'endStart' in selectedAuction && (
-            <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
-              <h5>Ending Period Starts</h5>
-              <a
-                href={`https://kusama.subscan.io/block/${selectedAuction.endStart}`}
-              >
-                Block {selectedAuction.endStart}
-              </a>
-            </div>
-          )}
-          <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
-            <h5>Bidding Ends</h5>
-            {'winners' in selectedAuction ? (
-              <a
-                href={`https://kusama.subscan.io/block/${selectedAuction.end}`}
-              >
-                Block {selectedAuction.end}
-              </a>
-            ) : (
-              <p>Block {selectedAuction.start}</p>
-            )}
-          </div>
-          {'winners' in selectedAuction && (
-            <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
-              <h5>Winning parachain(s) onboarded:</h5>
-              <p>
-                {(selectedAuction.winners ?? []).map(
-                  (winner, index) => (
-                    <React.Fragment key={index}>
-                      <a
-                        href={winner.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Lease Period {winner.leaseNo}
-                      </a>
-                      {index === 0 && ' - '}
-                    </React.Fragment>
-                  )
-                )}
-              </p>
-            </div>
-          )}
-          <p className="text-sm opacity-70">
-            The block numbers listed above can change based on network
-            block production and the potential for skipped blocks.
-            Click on the block number for an estimate of the date and
-            time.
-          </p>
         </div>
-      )}
+        {selectedAuction && (
+          <div className="mx-auto">
+            <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
+              <h5 className="mb-0">Auction Starts</h5>
+              {'winners' in selectedAuction ? (
+                <a
+                  className="my-0"
+                  href={`https://kusama.subscan.io/block/${selectedAuction.start}`}
+                >
+                  Block {selectedAuction.start}
+                </a>
+              ) : (
+                <p className="my-0">Block {selectedAuction.start}</p>
+              )}
+            </div>
+            {'endStart' in selectedAuction && (
+              <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
+                <h5 className="my-0">Ending Period Starts</h5>
+                <a
+                  className="my-0"
+                  href={`https://kusama.subscan.io/block/${selectedAuction.endStart}`}
+                >
+                  Block {selectedAuction.endStart}
+                </a>
+              </div>
+            )}
+            <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
+              <h5 className="my-0">Bidding Ends</h5>
+              {'winners' in selectedAuction ? (
+                <a
+                  className="my-0"
+                  href={`https://kusama.subscan.io/block/${selectedAuction.end}`}
+                >
+                  Block {selectedAuction.end}
+                </a>
+              ) : (
+                <p className="my-0">Block {selectedAuction.start}</p>
+              )}
+            </div>
+            {'winners' in selectedAuction && (
+              <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
+                <h5 className="my-0">
+                  Winning parachain(s) onboarded:
+                </h5>
+                <p className="my-0">
+                  {(selectedAuction.winners ?? []).map(
+                    (winner, index) => (
+                      <React.Fragment key={index}>
+                        <a
+                          className="my-0"
+                          href={winner.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Lease Period {winner.leaseNo}
+                        </a>
+                        {index === 0 && ' - '}
+                      </React.Fragment>
+                    )
+                  )}
+                </p>
+              </div>
+            )}
+            <p className="text-sm opacity-60">
+              The block numbers listed above can change based on
+              network block production and the potential for skipped
+              blocks. Click on the block number for an estimate of the
+              date and time.
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
