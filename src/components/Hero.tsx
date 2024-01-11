@@ -29,7 +29,7 @@ const Hero = () => {
             src={`/images/kusama.gif`}
             alt="Kusama GIF"
           />
-          <h1 className="space-mono absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform text-center">
+          <h1 className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform text-center font-mono text-[30px] lg:text-[55px]">
             PARACHAINS ARE HERE
           </h1>
           <a

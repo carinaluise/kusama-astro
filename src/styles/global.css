@@ -16,19 +16,19 @@ p {
 }
 
 h1 {
-  @apply font-space text-[48px] font-bold leading-none md:text-[50px] xl:text-[72px];
+  @apply font-space text-[48px] font-bold leading-none md:text-3xl xl:text-4xl;
 }
 
 h2 {
-  @apply mb-8 font-space text-[28px] font-bold leading-tight lg:text-[30px];
+  @apply mb-8 font-space text-xl font-bold leading-tight lg:text-2xl;
 }
 
 h3 {
-  @apply mb-4 font-space font-bold leading-relaxed lg:text-[28px];
+  @apply mb-4 font-space text-lg font-bold leading-relaxed lg:text-xl;
 }
 
 h4 {
-  @apply mb-4 font-space md:text-xl;
+  @apply text-md mb-4 font-space lg:text-lg;
 }
 
 h5 {
@@ -37,7 +37,7 @@ h5 {
 
 section,
 aside {
-  @apply my-40;
+  @apply my-24 md:my-40;
 }
 
 section {
@@ -45,7 +45,7 @@ section {
 }
 
 .main-breaks {
-  @apply max-w-[90%] md:max-w-[80%] lg:max-w-[85%] xl:max-w-[75%];
+  @apply max-w-[90%] sm:max-w-[80%] lg:max-w-[85%] xl:max-w-[75%];
 }
 /* Pagination Styling */
 
@@ -130,23 +130,8 @@ section {
   }
 }
 
-/* Scrollbar */
-
-/* root::-webkit-scrollbar {
-  display: none;
+.auction-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
-
-body:hover::-webkit-scrollbar {
-  width: 10px;
-  display: block;
-  position: absolute;
-}
-
-body::-webkit-scrollbar-track {
-  width: 10px;
-  @apply bg-black;
-}
-
-body::-webkit-scrollbar-thumb {
-  @apply bg-pink;
-} */

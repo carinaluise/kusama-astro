@@ -8,7 +8,7 @@ const NewsletterCTA = () => {
   return (
     <aside className="mx-auto text-center lg:w-[40%]">
       <h3 className="mb-4 text-2xl">Stay in the Loop</h3>
-      <p className="text-sm">
+      <p className="text-xs">
         NewsletterCTA to the newsletter to hear about Kusama updates
         and events.
       </p>

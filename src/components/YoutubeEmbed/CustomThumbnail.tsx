@@ -30,7 +30,7 @@ const CustomThumbnail = ({
           type="button"
         >
           <img
-            className="bg-pink hover:bg-turqoise"
+            className="scale-[0.7] bg-pink hover:bg-turqoise sm:scale-100"
             src="/images/play.png"
           />
         </button>

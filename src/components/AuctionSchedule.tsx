@@ -107,7 +107,7 @@ const AuctionSchedule = () => {
                 </p>
               </div>
             )}
-            <p className="text-sm opacity-60">
+            <p className="text-xs opacity-60">
               The block numbers listed above can change based on
               network block production and the potential for skipped
               blocks. Click on the block number for an estimate of the

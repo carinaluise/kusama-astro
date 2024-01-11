@@ -26,7 +26,7 @@ import {
       />
     </div>
     <p
-      class="relative text-sm leading-6 md:left-24 md:w-3/4 lg:left-1/2 lg:w-1/2 lg:pt-12"
+      class="relative text-xs leading-6 md:left-24 md:w-3/4 lg:left-1/2 lg:w-1/2 lg:pt-12"
     >
       Parachains are Kusama’s advanced, next-generation blockchains
       that bring several breakthroughs compared to legacy networks.
@@ -37,7 +37,7 @@ import {
   </section>
   <section class="mx-auto text-center lg:w-3/4">
     <h2 class="mb-8">Open possibilities for Web3 builders.</h2>
-    <p class="text-sm leading-6">
+    <p class="text-xs leading-6">
       While other blockchain networks only allow developers to build
       dapps using smart contracts, Kusama gives them full control over
       the underlying blockchain itself. This flexibility gives
@@ -49,23 +49,25 @@ import {
   <CustomSwiper client:load />
   <section class="mx-auto w-[90%] md:w-full">
     <h2>Welcome to the paraverse.</h2>
-    <p class="w-[30ch] text-sm md:w-2/3">
+    <p class="text-xs lg:w-2/3">
       From DeFi to identity and supply chain, gaming and NFTs, IoT,
       DAOs, and more, parachains can be built for any use case. They
       can also take on various forms depending on their intended
       function, including:
     </p>
-    <ul class="my-8 flex flex-wrap">
+    <ul
+      class="my-8 grid sm:grid-cols-2 sm:gap-12 md:gap-0 lg:grid-cols-3"
+    >
       {
         parachainsData.paraverse.map((item: ParachainTypes) => (
-          <li class="my-4 gap-8 md:w-[45%] xl:w-1/3">
+          <li class="my-4 gap-8">
             <Image
               class="mb-4"
               alt=""
               src={item.img}
             />
             <h4 class="mb-2 w-3/4">{item.title}</h4>
-            <p class="max-w-[80%] text-sm">{item.description}</p>
+            <p class="text-xs md:max-w-[80%]">{item.description}</p>
           </li>
         ))
       }
@@ -81,7 +83,7 @@ import {
     </div>
     <div class="relative mx-auto inline w-full lg:right-1/2 lg:w-1/2">
       <h2 class="mb-4 w-3/4">Parachains as autonomous agents</h2>
-      <p class="text-sm">
+      <p class="text-xs">
         Parachains can act autonomously based on the will of their
         communities to participate in Kusama governance and allocate
         on-chain treasuries. This opens the door to new decentralized
@@ -101,7 +103,7 @@ import {
     </div>
     <div class="mx-auto inline w-[90%] md:w-full lg:w-1/2">
       <h2 class="mb-4 w-3/4">Parachains as digital nation states</h2>
-      <p class="text-sm">
+      <p class="text-xs">
         With their own communities, rules, economies, governance,
         treasuries, and relationships with external chains, parachains
         are akin to decentralized digital nations. Kusama allows them
@@ -114,7 +116,7 @@ import {
     <h2 class="mb-4">
       Parachain Slot Auctions <br /> & Crowdloans
     </h2>
-    <p class="text-sm">
+    <p class="text-xs">
       Parachains connect to Kusama by leasing a parachain slot via
       auction. Parachain slots can be leased for up to 1 year at a
       time with the option to renew, and grant the parachain
@@ -124,12 +126,12 @@ import {
   </section>
   <section>
     <h2 class="text-center">How auctions work</h2>
-    <div class="mt-8 flex flex-wrap justify-center gap-4">
+    <div class="mt-8 grid gap-8 md:grid-cols-2">
       {
         parachainsData.auctionInfo.map((info: AuctionInfoTypes) => (
-          <div class="border-[1px] border-pink p-8 md:basis-[45%] ">
+          <div class="border-[1px] border-pink p-4 md:basis-[45%] ">
             <h3 class="mb-4">{info.title}</h3>
-            <p class="text-sm">{info.description}</p>
+            <p class="text-xs">{info.description}</p>
           </div>
         ))
       }
@@ -149,7 +151,7 @@ import {
         This bird breaks down walls. <br />
         Parachain launch NFTs
       </h2>
-      <p class="text-sm">
+      <p class="text-xs">
         Three limited edition NFTs were created to celebrate the
         launch of Kusama parachains. Representing three
         interpretations of the Kusama canary by Berlin street artists
@@ -168,7 +170,7 @@ import {
               src={nft.img}
             />
             <div class="ml-4 mt-6 pb-6">
-              <p class="mb-0 text-sm">{nft.aside}</p>
+              <p class="mb-0 text-xs">{nft.aside}</p>
               <h3 class="mt-0 text-xl">{nft.title}</h3>
             </div>
           </div>

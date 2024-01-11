@@ -58,7 +58,7 @@ const Menu = () => {
       {headerRoutes.map((item: { title: string; link: string }) => (
         <li
           key={item.title}
-          className="text-sm opacity-50 xl:text-[16px]"
+          className="text-xs opacity-50 xl:text-[16px]"
         >
           <a href={item.link}>{item.title}</a>
         </li>

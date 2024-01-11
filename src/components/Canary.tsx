@@ -20,7 +20,7 @@ const Canary = () => {
     <motion.section>
       <motion.h2
         style={{ y: meshAnimation2 }}
-        className="relative top-20 z-20 w-1/2 text-2xl md:top-10 lg:top-60 lg:w-1/3"
+        className="relative top-10 z-20 text-2xl md:w-1/2 md:text-3xl lg:top-60 lg:w-1/3"
       >
         Develop on the Canary Network
       </motion.h2>

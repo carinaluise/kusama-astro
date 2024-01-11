@@ -12,7 +12,7 @@ const YoutubeOverlay = ({ id, acceptAll }: YoutubeOverlayTypes) => {
   return (
     <div className="flex h-full flex-col items-center justify-center bg-black bg-opacity-95 text-white">
       <h3 className="font-heading mb-4 mt-8 text-center text-white sm:mt-4">
-        You must enable all Youtube types to play this video
+        You must enable all cookie types to play this video
       </h3>
       <div className="mt-4 flex flex-col sm:flex-row sm:space-x-4 ">
         <Button

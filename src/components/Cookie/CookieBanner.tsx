@@ -38,7 +38,7 @@ const CookieBanner = () => {
           >
             <div className="pointer-events-auto fixed inset-x-0 bottom-0 bg-black px-8 ring-1 ring-gray/50">
               <div className="flex flex-col justify-between gap-x-8 gap-y-4 md:flex-row md:items-center">
-                <p className="mt-1 max-w-[1100px] text-sm font-normal opacity-70 ">
+                <p className="mt-1 max-w-[1100px] text-xs font-normal opacity-70 ">
                   This website uses Cookies.
                 </p>
                 <div className="mt-2 flex items-center gap-x-2">

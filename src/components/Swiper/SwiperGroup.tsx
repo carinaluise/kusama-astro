@@ -12,7 +12,7 @@ const SwiperGroup = ({
   activeIndex: number;
 }) => {
   return (
-    <div className="flex h-full flex-wrap">
+    <div className="flex flex-wrap items-start justify-start">
       {group.items.map((item, itemIndex) => (
         <SwiperItem
           index={itemIndex}
