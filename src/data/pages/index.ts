@@ -7,8 +7,8 @@ import arrows from '../../images/index/arrows.svg';
 
 export interface BoxItemTypes {
   title: string;
-  link1: string;
-  link2: string;
+  link1: { title: string; href: string };
+  link2: { title: string; href: string };
 }
 
 export interface CustomBlockchainTypes {
@@ -109,18 +109,36 @@ export const indexData: IndexDataTypes = {
   boxItems: [
     {
       title: 'Build',
-      link1: 'Kusama Docs',
-      link2: 'Learn Substrate',
+      link1: {
+        title: 'Kusama Docs',
+        href: 'https://wiki.polkadot.network/docs/kusama-index',
+      },
+      link2: {
+        title: 'Learn Substrate',
+        href: 'https://substrate.io/',
+      },
     },
     {
       title: 'Validate',
-      link1: 'Start Validating',
-      link2: 'Technical Updates',
+      link1: {
+        title: 'Start Validating',
+        href: 'https://wiki.polkadot.network/docs/maintain-guides-how-to-validate-kusama',
+      },
+      link2: {
+        title: 'Technical Updates',
+        href: 'https://share.hsforms.com/7051618/350763d6-4e1f-47ef-9fe9-d220faa2d656',
+      },
     },
     {
       title: 'Join',
-      link1: 'Ambassador Program',
-      link2: 'Nominate a Validator',
+      link1: {
+        title: 'Ambassador Program',
+        href: 'https://polkadot.network/blog/polkadot-ambassador-program',
+      },
+      link2: {
+        title: 'Nominate a Validator',
+        href: 'https://wiki.polkadot.network/docs/maintain-guides-how-to-nominate-kusama',
+      },
     },
   ],
 };

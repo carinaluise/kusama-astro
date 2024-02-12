@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../Button';
+import Link from '../Link';
 
 interface YoutubeOverlayTypes {
   id: string;
@@ -21,9 +22,9 @@ const YoutubeOverlay = ({ id, acceptAll }: YoutubeOverlayTypes) => {
         >
           Accept All
         </Button>
-        <a href={`https://www.youtube.com/watch?v=${id}`}>
+        <Link href={`https://www.youtube.com/watch?v=${id}`}>
           <Button variant="small">Watch on YouTube</Button>
-        </a>
+        </Link>
       </div>
     </div>
   );

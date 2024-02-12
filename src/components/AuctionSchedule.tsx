@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from './Link';
 import auctionData, {
   AuctionTypes,
 } from '../data/components/auctions';
@@ -49,12 +50,12 @@ const AuctionSchedule = () => {
             <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
               <h5 className="mb-0">Auction Starts</h5>
               {'winners' in selectedAuction ? (
-                <a
-                  className="my-0"
+                <Link
+                  classNames="my-0"
                   href={`https://kusama.subscan.io/block/${selectedAuction.start}`}
                 >
                   Block {selectedAuction.start}
-                </a>
+                </Link>
               ) : (
                 <p className="my-0">Block {selectedAuction.start}</p>
               )}
@@ -62,23 +63,23 @@ const AuctionSchedule = () => {
             {'endStart' in selectedAuction && (
               <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
                 <h5 className="my-0">Ending Period Starts</h5>
-                <a
-                  className="my-0"
+                <Link
+                  classNames="my-0"
                   href={`https://kusama.subscan.io/block/${selectedAuction.endStart}`}
                 >
                   Block {selectedAuction.endStart}
-                </a>
+                </Link>
               </div>
             )}
             <div className="mb-4 border-b-[1px] border-gray/20 pb-4">
               <h5 className="my-0">Bidding Ends</h5>
               {'winners' in selectedAuction ? (
-                <a
-                  className="my-0"
+                <Link
+                  classNames="my-0"
                   href={`https://kusama.subscan.io/block/${selectedAuction.end}`}
                 >
                   Block {selectedAuction.end}
-                </a>
+                </Link>
               ) : (
                 <p className="my-0">Block {selectedAuction.start}</p>
               )}
@@ -92,14 +93,12 @@ const AuctionSchedule = () => {
                   {(selectedAuction.winners ?? []).map(
                     (winner, index) => (
                       <React.Fragment key={index}>
-                        <a
-                          className="my-0"
+                        <Link
+                          classNames="my-0"
                           href={winner.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           Lease Period {winner.leaseNo}
-                        </a>
+                        </Link>
                         {index === 0 && ' - '}
                       </React.Fragment>
                     )

@@ -2,15 +2,19 @@
 import Layout from '../layouts/layout.astro';
 
 import Hero from '../components/Hero';
-import BoxAnimation from '../components/Box/BoxAnimation';
+
 import Vortex from '../components/Vortex';
 import Canary from '../components/Canary';
 import NewsletterCTA from '../components/NewsletterCTA';
 import Button from '../components/Button';
+import Link from '../components/Link';
 
 import { Image } from 'astro:assets';
 import Mesh from '../images/index/mesh.png';
 import Playground from '../images/index/playground.png';
+
+import Box from '../components/Box/Box';
+import BoxWithLinks from '../components/Box/BoxWithLinks';
 
 import {
   indexData,
@@ -56,7 +60,7 @@ import {
         </p>
       </div>
     </section>
-    <BoxAnimation
+    <Box
       client:load
       title="What is Kusama?"
       p1="Kusama is a scalable network of specialized blockchains built using Substrate and nearly the same codebase as Polkadot. The network is an experimental development environment for teams who want to move fast and innovate on Kusama, or prepare for deployment on Polkadot."
@@ -103,9 +107,9 @@ import {
     </div>
   </article>
   <section class="flex justify-center">
-    <a href="https://polkadot.network/development/build/">
+    <Link href="https://polkadot.network/development/build/">
       <Button>Ready to start? Contact our team.</Button>
-    </a>
+    </Link>
   </section>
   <section>
     <div class="lg:sticky lg:top-96">
@@ -142,11 +146,11 @@ import {
     </ul>
   </section>
   <section class="flex justify-center">
-    <a
+    <Link
       href="https://wiki.polkadot.network/docs/en/build-build-with-polkadot#what-is-the-difference-between-building-a-parachain-a-parathread-or-a-smart-contract"
     >
       <Button>Why Build a Parachain</Button>
-    </a>
+    </Link>
   </section>
   <section class="w-full items-baseline gap-24 lg:flex">
     <h3 class="mb-16 lg:w-1/2">KSM Token Utilization</h3>
@@ -173,12 +177,12 @@ import {
         making it simple to secure your blockchain and communicate
         with Kusama's network.
       </p>
-      <a href="https://substrate.io/">
+      <Link href="https://substrate.io/">
         <Button variant="white">Learn More</Button>
-      </a>
-      <a href="https://docs.substrate.io/">
+      </Link>
+      <Link href="https://docs.substrate.io/">
         <Button>Substrate Playground</Button>
-      </a>
+      </Link>
     </div>
   </section>
   <section>
@@ -188,12 +192,11 @@ import {
     >
       {
         indexData.boxItems.map((item: BoxItemTypes) => (
-          <BoxAnimation
+          <BoxWithLinks
             client:load
-            structure="small"
             title={item.title}
-            p1={item.link1}
-            p2={item.link2}
+            link1={item.link1}
+            link2={item.link2}
           />
         ))
       }

@@ -4,6 +4,7 @@ import React, {
   useTransform,
 } from 'framer-motion';
 import Button from './Button';
+import Link from './Link';
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -32,12 +33,12 @@ const Hero = () => {
           <h1 className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform text-center font-mono text-[30px] lg:text-[55px]">
             PARACHAINS ARE HERE
           </h1>
-          <a
-            className="top-100% absolute left-1/2 -translate-x-1/2 -translate-y-1/2 transform md:top-[90%]"
+          <Link
+            classNames="top-100% absolute left-1/2 -translate-x-1/2 -translate-y-1/2 transform md:top-[90%]"
             href="/parachains"
           >
             <Button>Learn more</Button>
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
     </div>

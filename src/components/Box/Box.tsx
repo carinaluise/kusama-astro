@@ -1,17 +1,29 @@
 import React from 'react';
-import { motion, MotionValue } from 'framer-motion';
+import { useScroll, useTransform, motion } from 'framer-motion';
 
 interface BoxTypes {
   title: string;
   p1: string;
   p2: string;
-  boxAnimation: MotionValue<string>;
   'client:load': true;
 }
 
-const Box = ({ title, p1, p2, boxAnimation }: BoxTypes) => {
+const Box = ({ title, p1, p2 }: BoxTypes) => {
+  const { scrollYProgress } = useScroll();
+
+  const boxAnimation = useTransform(
+    scrollYProgress,
+    [0.15, 0.25],
+    ['-0.5%', '-6%']
+  );
+
   return (
-    <article className="relative mx-auto w-[90%] md:w-[70%] lg:left-1/4 lg:w-1/2">
+    <motion.article
+      className="relative mx-auto w-[90%] md:w-[70%] lg:left-1/4 lg:w-1/2"
+      style={{
+        y: boxAnimation,
+      }}
+    >
       <div className={`border-2 border-pink px-8 py-8 md:py-12`}>
         <h2>{title}</h2>
         <p>{p1}</p>
@@ -24,7 +36,7 @@ const Box = ({ title, p1, p2, boxAnimation }: BoxTypes) => {
         }}
         className="absolute left-0 top-0 h-full w-full border-2 border-pink"
       ></motion.div>
-    </article>
+    </motion.article>
   );
 };
 

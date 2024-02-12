@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from './Link';
 import { CookieModal } from './Cookie/CookieModal';
 
 import footerRoutes from '../data/components/footer';
@@ -22,7 +23,7 @@ const Footer = () => {
                       key={item.title}
                       className="mb-2 max-w-[20vh] text-xs opacity-50 sm:max-w-[12vh] md:max-w-[16ch] lg:max-w-full"
                     >
-                      <a href={item.link}>{item.title}</a>
+                      <Link href={item.link}>{item.title}</Link>
                     </li>
                   )
                 )}
@@ -33,15 +34,15 @@ const Footer = () => {
             <li className="opacity-50">© 2023 Kusama</li>
             <span>·</span>
             <li>
-              <a href="/legal-disclosures">Legal Disclosures</a>
+              <Link href="/legal-disclosures">Legal Disclosures</Link>
             </li>
             <span>·</span>
             <li>
-              <a href="/privacy-policy">Privacy Policy</a>
+              <Link href="/privacy-policy">Privacy Policy</Link>
             </li>
             <span>·</span>
             <li>
-              <a href="/disclaimer">Disclaimer</a>
+              <Link href="/disclaimer">Disclaimer</Link>
             </li>
             <span>·</span>
             <li>
