@@ -1,5 +1,3 @@
-<img src="https://cms.polkadot.network/content/images/2019/08/image1.png">
-
 # Kusama Network
 
 A site for marketing and information on the canary network related to Polkadot. Built with Astro, TailwindCSS, Typescript and React.
